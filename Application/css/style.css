@@ -90,6 +90,12 @@ body {
   color: #ffffff !important;
 }
 
+/*Make a request file button*/
+
+[hidden] {
+  display: none !important;
+}
+
 /* Header */
 #header {
   background: #3F5765;
