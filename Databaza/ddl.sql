@@ -89,4 +89,28 @@ CREATE TABLE `hrms`.`workers` (
     REFERENCES `hrms`.`requests` (`request_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+    
+    CREATE TABLE `hrms`.`tasks` (
+  `task_id` INT NOT NULL AUTO_INCREMENT,
+  `task_tittle` VARCHAR(45) NOT NULL,
+  `task_body` VARCHAR(200) NOT NULL,
+  `date_created` DATE NULL,
+  `department_id` INT NOT NULL,
+  `employee_id` INT NULL,
+  PRIMARY KEY (`task_id`),
+  INDEX `department_idx` (`department_id` ASC) VISIBLE,
+  INDEX `employee_idx` (`employee_id` ASC) VISIBLE,
+  CONSTRAINT `department`
+    FOREIGN KEY (`department_id`)
+    REFERENCES `hrms`.`departments` (`department_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `employee`
+    FOREIGN KEY (`employee_id`)
+    REFERENCES `hrms`.`workers` (`worker_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);
+    
+
+
 
