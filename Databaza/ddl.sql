@@ -1,117 +1,126 @@
-CREATE DATABASE hrms;
-USE hrms;
-
-CREATE TABLE `hrms`.`managers` (
-  `managers_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `surname` VARCHAR(45) NOT NULL,
-  `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `salary` DOUBLE NOT NULL,
-  `start_date` DATE NOT NULL,
-  PRIMARY KEY (`managers_id`),
+CREATE TABLE `managmentsystem`.`new_table` (
+  `manager_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `surname` VARCHAR(100) NOT NULL,
+  `username` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `salary` DOUBLE NULL,
+  `start_date` DATE NULL,
+  PRIMARY KEY (`manager_id`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);
-  
 
-
-
-
-CREATE TABLE `hrms`.`departments` (
-  `department_id` INT NOT NULL AUTO_INCREMENT,
-  `dept_name` VARCHAR(45) NOT NULL,
-  `budget` DOUBLE NOT NULL,
-  `manager_id` INT NOT NULL,
-  PRIMARY KEY (`department_id`),
-  INDEX `manager_id_idx` (`manager_id` ASC) VISIBLE,
-  CONSTRAINT `manager_id`
-    FOREIGN KEY (`manager_id`)
-    REFERENCES `hrms`.`managers` (`managers_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-    
-CREATE TABLE `hrms`.`jobs` (
+CREATE TABLE `managmentsystem`.`jobs` (
   `job_id` INT NOT NULL AUTO_INCREMENT,
   `job_tittle` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`job_id`));
-  
-  CREATE TABLE `hrms`.`requests` (
+
+CREATE TABLE `managmentsystem`.`requests` (
   `request_id` INT NOT NULL AUTO_INCREMENT,
-  `request_tittle` VARCHAR(45) NOT NULL,
+  `request_tittle` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`request_id`));
-
-
-CREATE TABLE `hrms`.`workers` (
-  `worker_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `surname` VARCHAR(45) NOT NULL,
-  `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `start_date` DATE NOT NULL,
+  
+  CREATE TABLE `managmentsystem`.`departments` (
+  `department_id` INT NOT NULL AUTO_INCREMENT,
+  `department_name` VARCHAR(45) NOT NULL,
+  `budget` DOUBLE NOT NULL,
+  `manager_id` INT NOT NULL,
+  PRIMARY KEY (`department_id`),
+  INDEX `manager_idx` (`manager_id` ASC) VISIBLE,
+  CONSTRAINT `manager`
+    FOREIGN KEY (`manager_id`)
+    REFERENCES `managmentsystem`.`managers` (`manager_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+    
+ALTER TABLE `managmentsystem`.`departments` 
+DROP FOREIGN KEY `manager`;
+ALTER TABLE `managmentsystem`.`departments` 
+ADD CONSTRAINT `manager`
+  FOREIGN KEY (`manager_id`)
+  REFERENCES `managmentsystem`.`managers` (`manager_id`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE;
+  
+  CREATE TABLE `managmentsystem`.`employees` (
+  `emp_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `surname` VARCHAR(100) NOT NULL,
+  `username` VARCHAR(100) NOT NULL,
+  `passowrd` VARCHAR(45) NOT NULL,
   `job_id` INT NOT NULL,
   `department_id` INT NOT NULL,
-  `salary` FLOAT NOT NULL,
-  `bonuses` DOUBLE NULL,
-  PRIMARY KEY (`worker_id`),
+  `salary` DOUBLE NOT NULL,
+  `bonuses` DOUBLE NULL DEFAULT 0,
+  PRIMARY KEY (`emp_id`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
-  INDEX `job_id_idx` (`job_id` ASC) VISIBLE,
-  INDEX `department_id_idx` (`department_id` ASC) VISIBLE,
-  CONSTRAINT `job_id`
-    FOREIGN KEY (`job_id`)
-    REFERENCES `hrms`.`jobs` (`job_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `department_id`
-    FOREIGN KEY (`department_id`)
-    REFERENCES `hrms`.`departments` (`department_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-    
-    
-    CREATE TABLE `hrms`.`requests_made` (
-  `request_no` INT NOT NULL AUTO_INCREMENT,
-  `worker_id` INT NOT NULL,
-  `request_id` INT NOT NULL,
-  `request_date` DATE NULL,
-  `documentation` BLOB NULL,
-  `approval` VARCHAR(45) NULL DEFAULT 'NO',
-  `approval_date` DATE NULL,
-  PRIMARY KEY (`request_no`),
-  INDEX `worker_id_idx` (`worker_id` ASC) VISIBLE,
-  INDEX `request_id_idx` (`request_id` ASC) VISIBLE,
-  CONSTRAINT `worker_id`
-    FOREIGN KEY (`worker_id`)
-    REFERENCES `hrms`.`workers` (`worker_id`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `request_id`
-    FOREIGN KEY (`request_id`)
-    REFERENCES `hrms`.`requests` (`request_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-    
-    CREATE TABLE `hrms`.`tasks` (
-  `task_id` INT NOT NULL AUTO_INCREMENT,
-  `task_tittle` VARCHAR(45) NOT NULL,
-  `task_body` VARCHAR(200) NOT NULL,
-  `date_created` DATE NULL,
-  `department_id` INT NOT NULL,
-  `employee_id` INT NULL,
-  PRIMARY KEY (`task_id`),
+  INDEX `job_idx` (`job_id` ASC) VISIBLE,
   INDEX `department_idx` (`department_id` ASC) VISIBLE,
-  INDEX `employee_idx` (`employee_id` ASC) VISIBLE,
+  CONSTRAINT `job`
+    FOREIGN KEY (`job_id`)
+    REFERENCES `managmentsystem`.`jobs` (`job_id`)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE,
   CONSTRAINT `department`
     FOREIGN KEY (`department_id`)
-    REFERENCES `hrms`.`departments` (`department_id`)
+    REFERENCES `managmentsystem`.`departments` (`department_id`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `employee`
-    FOREIGN KEY (`employee_id`)
-    REFERENCES `hrms`.`workers` (`worker_id`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION);
+    ON UPDATE CASCADE);
     
+ALTER TABLE `managmentsystem`.`employees` 
+CHANGE COLUMN `passowrd` `passoword` VARCHAR(45) NOT NULL ;
+
+ALTER TABLE `managmentsystem`.`employees` 
+CHANGE COLUMN `passoword` `password` VARCHAR(45) NOT NULL ;
+
+ALTER TABLE `managmentsystem`.`employees` 
+ADD COLUMN `start_date` DATE NOT NULL AFTER `password`;
+
+
+CREATE TABLE `managmentsystem`.`requests_made` (
+  `request_made_id` INT NOT NULL AUTO_INCREMENT,
+  `emp_id` INT NOT NULL,
+  `request_id` INT NOT NULL,
+  `documentation` BLOB NULL,
+  `duration` INT NOT NULL,
+  `request_date` DATE NOT NULL,
+  `approval_date` DATE NULL,
+  `approval` VARCHAR(45) NULL DEFAULT 'NO',
+  PRIMARY KEY (`request_made_id`),
+  INDEX `employee_idx` (`emp_id` ASC) VISIBLE,
+  INDEX `request_idx` (`request_id` ASC) VISIBLE,
+  CONSTRAINT `employee`
+    FOREIGN KEY (`emp_id`)
+    REFERENCES `managmentsystem`.`employees` (`emp_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `request`
+    FOREIGN KEY (`request_id`)
+    REFERENCES `managmentsystem`.`requests` (`request_id`)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE);
+
+CREATE TABLE `managmentsystem`.`tasks` (
+  `task_id` INT NOT NULL,
+  `task_tittle` VARCHAR(45) NOT NULL,
+  `task_documentation` BLOB NULL,
+  `date_created` DATE NOT NULL,
+  `due_date` DATE NOT NULL,
+  `bonuses` DOUBLE NOT NULL,
+  `department_id` INT NOT NULL,
+  `emp_id` INT NULL,
+  PRIMARY KEY (`task_id`),
+  INDEX `department_idx` (`department_id` ASC) VISIBLE,
+  INDEX `employee_idx` (`emp_id` ASC) VISIBLE,
+  CONSTRAINT `department_task`
+    FOREIGN KEY (`department_id`)
+    REFERENCES `managmentsystem`.`departments` (`department_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `emp_excecute`
+    FOREIGN KEY (`emp_id`)
+    REFERENCES `managmentsystem`.`employees` (`emp_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 
 
-ALTER TABLE `hrms`.`managers` 
-CHANGE COLUMN `managers_id` `manager_id` INT(11) NOT NULL AUTO_INCREMENT ;
