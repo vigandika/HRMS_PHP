@@ -12,8 +12,7 @@ CREATE TABLE `hrms`.`managers` (
   PRIMARY KEY (`managers_id`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);
   
-ALTER TABLE `hrms`.`managers` 
-CHANGE COLUMN `managers_id` `manager_id` INT(11) NOT NULL AUTO_INCREMENT ;
+
 
 
 
@@ -114,3 +113,5 @@ CREATE TABLE `hrms`.`workers` (
 
 
 
+ALTER TABLE `hrms`.`managers` 
+CHANGE COLUMN `managers_id` `manager_id` INT(11) NOT NULL AUTO_INCREMENT ;
