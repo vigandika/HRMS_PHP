@@ -41,5 +41,5 @@ class DatabaseAdapterPDO implements DatabaseAdapterInterface {
         }
         return $this->lastStatemnt;
     }
-    
+
 }
