@@ -12,12 +12,12 @@ class DatabaseAdapterPDO implements DatabaseAdapterInterface {
 
         $pdo=new PDO($connString,$user,$password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        this->pdo=$pdo;
+        $this->pdo=$pdo;
     }
 
     public function closeConnection(){
-        if (this->pdo!=null){
-            this->pdo=null;
+        if ($this->pdo!=null){
+            $this->pdo=null;
         }
     }
 
@@ -41,10 +41,5 @@ class DatabaseAdapterPDO implements DatabaseAdapterInterface {
         }
         return $this->lastStatemnt;
     }
-
-    public function runQuery($sql, $parameters = array()){
-
-    }
-
-
+    
 }
