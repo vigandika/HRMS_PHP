@@ -27,7 +27,7 @@ class DB{
         return self::$instance;
     }
 
-    public function query($sql,$parameters=array()){
+    public function runQuery($sql,$parameters=array()){
         $this->error=false;
         if($this->query=$this->pdo->prepare($sql)){
             $i=1;
@@ -65,7 +65,7 @@ class DB{
     }
 
     public function getColumns($table){
-        return $this->query("SHOW COLUMNS FROM {$table}");
+        return $this->runQuery("SHOW COLUMNS FROM {$table}");
     }
 
     public function error(){
