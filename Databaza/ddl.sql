@@ -13,6 +13,10 @@ CREATE TABLE `managmentsystem`.`jobs` (
   `job_id` INT NOT NULL AUTO_INCREMENT,
   `job_tittle` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`job_id`));
+  
+ALTER TABLE `managmentsystem`.`jobs` 
+CHANGE COLUMN `job_tittle` `job_title` VARCHAR(45) NOT NULL ;
+
 
 CREATE TABLE `managmentsystem`.`requests` (
   `request_id` INT NOT NULL AUTO_INCREMENT,
