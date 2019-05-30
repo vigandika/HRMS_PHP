@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manager Area | Requests</title>
+  <title>Manager Area | Employees</title>
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
@@ -27,16 +28,17 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="overview.html">Dashboard</a></li>
-          <li class="active"><a href="requests.html">Requests</a></li>
-          <li><a href="tasks.html">Tasks</a></li>
-          <li><a href="employees.html">Employees</a></li>
+          <li><a href="overview.php">Dashboard</a></li>
+          <li><a href="requests.php">Requests</a></li>
+          <li><a href="tasks.php">Tasks</a></li>
+          <li class="active"><a href="employees.php">Employees</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Welcome, Visar</a></li>
-          <li><a href="login.html">Logout</a></li>
+          <li><a href="login.php">Logout</a></li>
         </ul>
       </div>
+      <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -44,7 +46,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10">
-          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Requests</h1>
+          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Employees</h1>
         </div>
         <div class="col-md-2">
           <div class="dropdown create">
@@ -54,9 +56,9 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Task</a></li>
-              <li><a href="requests.html">See Requests</a></li>
-              <li><a href="employees.html">Employee</a></li>
+              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Tasks</a></li>
+              <li><a href="requests.php">See Requests</a></li>
+              <li><a href="employees.php">Employee</a></li>
             </ul>
           </div>
         </div>
@@ -67,8 +69,8 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="overview.html">Dashboard</a></li>
-        <li class="active">Requests</li>
+        <li><a href="overview.php">Dashboard</a></li>
+        <li class="active">Employees</li>
       </ol>
     </div>
   </section>
@@ -78,15 +80,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="overview.html" class="list-group-item active main-color-bg">
+            <a href="overview.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                aria-hidden="true"></span> Requests <span class="badge">12</span></a>
-            <a href="tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                               aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="employees.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                   aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+            <a href="requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                 aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+            <a href="tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                              aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="employees.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Employees <span class="badge">203</span></a>
           </div>
 
           <div class="well">
@@ -107,122 +109,61 @@
           </div>
         </div>
         <div class="col-md-9">
-          <!-- Pending Requests -->
+          <!-- Website Overview -->
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">Pendding Requests</h3>
+              <h3 class="panel-title">Employees</h3>
             </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">
-                  <input class="form-control" type="text" placeholder="Filter Requests...">
+                  <input class="form-control" type="text" placeholder="Filter Employees...">
                 </div>
               </div>
               <br>
               <table class="table table-striped table-hover">
                 <tr>
-                  <th>Title</th>
-                  <th>Employee</th>
-                  <th>Requested On</th>
-                  <th>Leave Form</th>
-                  <th></th>
+                  <th>Name</th>
+                  <th>Job Tittle</th>
+                  <th>Joined On</th>
+                  <th>Salary</th>
+                  <th>Bonuses</th>
                 </tr>
                 <tr>
-                  <td>Vacation</td>
-                  <td>Blet Beqa</td>
+                  <td>Jill Smith</td>
+                  <td>DevOps</td>
                   <td>Dec 12, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
+                  <td>100000</td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td>Pregnancy Leave</td>
-                  <td>Fjolla Hajdarhoxha</td>
+                  <td>Eve Jackson</td>
+                  <td>Python</td>
                   <td>Dec 13, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
+                  <td>120000</td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <td>Medicdal Leave</td>
-                  <td>Shpend Jahiri</td>
-                  <td>Dec 13, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Medical Leave</td>
-                  <td>Mali Retkoceri</td>
+                  <td>Stephanie Landon</td>
+                  <td>Javscript</td>
                   <td>Dec 14, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
+                  <td>70000</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <td>Mike Johnson</td>
+                  <td>Designer</td>
+                  <td>Dec 15, 2016</td>
+                  <td>90000</td>
+                  <td></td>
                 </tr>
               </table>
             </div>
           </div>
-          <div>
-            <!-- Approved Requests -->
-            <div class="panel panel-default">
-              <div class="panel-heading main-color-bg">
-                <h3 class="panel-title">Approved Requests</h3>
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <input class="form-control" type="text" placeholder="Filter Requests...">
-                  </div>
-                </div>
-                <br>
-                <table class="table table-striped table-hover">
-                  <tr>
-                    <th>Title</th>
-                    <th>Employee</th>
-                    <th>Requested On</th>
-                    <th>Approved On</th>
-                    <th>Leave Form</th>
-                    <th></th>
-                  </tr>
-                  <tr>
-                    <td>Vacation</td>
-                    <td>Blet Beqa</td>
-                    <td>Dec 12, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Pregnancy Leave</td>
-                    <td>Fjolla Hajdarhoxha</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medicdal Leave</td>
-                    <td>Shpend Jahiri</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medical Leave</td>
-                    <td>Mali Retkoceri</td>
-                    <td>Dec 14, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                </table>
-              </div>
-            </div>
 
-          </div>
         </div>
       </div>
+    </div>
   </section>
 
   <footer id="footer">
@@ -276,6 +217,10 @@
   <script>
     CKEDITOR.replace('editor1');
   </script>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>

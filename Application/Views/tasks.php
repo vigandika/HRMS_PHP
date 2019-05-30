@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manager Area | Posts</title>
-  <!-- Bootstrap core CSS -->
+  <title>Manager Area | Tasks</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
@@ -28,17 +27,16 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="e_dashboard.html">Dashboard</a></li>
-          <li><a href="e_requests.html">Requests</a></li>
-          <li class="active"><a href="e_tasks.html">Tasks</a></li>
-          <li><a href="e_profile.html">Profile</a></li>
+          <li><a href="overview.php">Dashboard</a></li>
+          <li><a href="requests.php">Requests</a></li>
+          <li class="active"><a href="tasks.php">Tasks</a></li>
+          <li><a href="employees.php">Employees</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Brad</a></li>
-          <li><a href="e_login.html">Logout</a></li>
+          <li><a href="#">Welcome, Visar</a></li>
+          <li><a href="login.php">Logout</a></li>
         </ul>
       </div>
-      <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -56,9 +54,9 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#makeRequest">Make Request</a></li>
-              <li><a href="#">See Requests</a></li>
-              <li><a href="#">Add Employee</a></li>
+              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Task</a></li>
+              <li><a href="requests.php">See Requests</a></li>
+              <li><a href="employees.php">Employee</a></li>
             </ul>
           </div>
         </div>
@@ -69,7 +67,7 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="e_dashboard.html">Dashboard</a></li>
+        <li><a href="overview.php">Dashboard</a></li>
         <li class="active">Tasks</li>
       </ol>
     </div>
@@ -80,15 +78,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="e_dashboard.html" class="list-group-item active main-color-bg">
+            <a href="overview.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="e_requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                    aria-hidden="true"></span> Request <span class="badge">12</span></a>
-            <a href="e_tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="e_profile.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                   aria-hidden="true"></span> Profile <span class="badge">203</span></a>
+            <a href="requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                 aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+            <a href="tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                              aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="employees.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Employees <span class="badge">203</span></a>
           </div>
 
           <div class="well">
@@ -109,10 +107,10 @@
           </div>
         </div>
         <div class="col-md-9">
-          <!-- To Be Completed-->
+          <!-- Pending Tasks -->
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">To be completed Tasks</h3>
+              <h3 class="panel-title">Pending Tasks</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -124,38 +122,33 @@
               <table class="table table-striped table-hover">
                 <tr>
                   <th>Title</th>
-                  <th>Due Date</th>
+                  <th>Task Description</th>
                   <th>Created On</th>
                   <th>Bonuses</th>
-                  <th></th>
                 </tr>
                 <tr>
                   <td>OOP</td>
                   <td></td>
                   <td>Dec 12, 2016</td>
                   <td>100</td>
-                  <td><a class="btn btn-primary" href="#">Take It</a></td>
                 </tr>
                 <tr>
                   <td>PHP</td>
                   <td></td>
                   <td>Dec 13, 2016</td>
-                  <td>30</td>
-                  <td><a class="btn btn-primary" href="#">Take It</a></td>
+                  <td>100</td>
                 </tr>
                 <tr>
                   <td>Computer Networking</td>
                   <td></td>
                   <td>Dec 13, 2016</td>
-                  <td>30</td>
-                  <td><a class="btn btn-primary" href="#">Take It</a></td>
+                  <td>100</td>
                 </tr>
                 <tr>
                   <td>Neural Networks</td>
                   <td></td>
                   <td>Dec 14, 2016</td>
-                  <td>30</td>
-                  <td><a class="btn btn-primary" href="#">Take It</a></td>
+                  <td>100</td>
                 </tr>
               </table>
             </div>
@@ -179,14 +172,14 @@
               <table class="table table-striped table-hover">
                 <tr>
                   <th>Task Title</th>
-                  <th>Bonuses</th>
+                  <th>Completed by</th>
                   <th>Created On</th>
                   <th>Task Description</th>
                   <th></th>
                 </tr>
                 <tr>
                   <td>Web Dev</td>
-                  <td></td>
+                  <td>Visar Buza</td>
                   <td>Dec 12, 2016</td>
                   <td></td>
                   <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
@@ -194,7 +187,7 @@
                 </tr>
                 <tr>
                   <td>Design</td>
-                  <td></td>
+                  <td>Visar Buza</td>
                   <td>Dec 13, 2016</td>
                   <td></td>
                   <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
@@ -202,7 +195,7 @@
                 </tr>
                 <tr>
                   <td>Java</td>
-                  <td></span></td>
+                  <td>Vigan Dika</span></td>
                   <td>Dec 13, 2016</td>
                   <td></td>
                   <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
@@ -210,7 +203,7 @@
                 </tr>
                 <tr>
                   <td>OOP</td>
-                  <td></td>
+                  <td>Visar Buza</td>
                   <td>Dec 14, 2016</td>
                   <td></td>
                   <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
@@ -223,7 +216,6 @@
         </div>
       </div>
     </div>
-    </div>
   </section>
 
   <footer id="footer">
@@ -232,49 +224,42 @@
 
   <!-- Modals -->
 
-  <!-- Make a Leave Request -->
-  <div class="modal fade" id="makeRequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <!-- Add Task -->
+  <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form>
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Leave Request</h4>
+            <h4 class="modal-title" id="myModalLabel">Add Task</h4>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <div class="form-group">
-                <label for="sel1">Request Leave</label>
-                <select class="form-control" id="sel1">
-                  <option>Vacation Leave</option>
-                  <option>Medical Leave</option>
-                  <option>Pregnancy Leave</option>
-                </select>
-              </div>
+              <label>Task Title</label>
+              <input type="text" class="form-control" placeholder="Task Title">
             </div>
             <div class="form-group">
-              <label>Upload your documentation</label>
+              <label>Task Body</label>
+              <textarea name="editor1" class="form-control" placeholder="Task Body"></textarea>
             </div>
-            <div class="form-group">
-              <label class="btn btn-default">
-                Browse <input type="file" hidden>
-              </label>
-            </div>
-
             <div class="checkbox">
               <label>
-                <input type="checkbox"> Urgent
+                <input type="checkbox"> Published
               </label>
             </div>
             <div class="form-group">
-              <label>Start Date</label>
-              <input type="date" class="form-control">
+              <label>Due Date</label>
+              <input type="text" class="form-control" placeholder="Add a time penalty...">
+            </div>
+            <div class="form-group">
+              <label>Task Budget</label>
+              <input type="text" class="form-control" placeholder="Add task budget...">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
           </div>
         </form>
       </div>

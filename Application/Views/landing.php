@@ -17,8 +17,8 @@
         <h1 class="cover-heading">HRMS</h1>
         <p class="lead">Click on the category you belong</p>
         <p class="lead">
-          <a href="login.html" class="btn btn-lg btn-secondary">Manager</a>
-          <a href="e_login.html" class="btn btn-lg btn-secondary">Employee</a>
+          <a href="login.php" class="btn btn-lg btn-secondary">Manager</a>
+          <a href="e_login.php" class="btn btn-lg btn-secondary">Employee</a>
         </p>
       </main>
 

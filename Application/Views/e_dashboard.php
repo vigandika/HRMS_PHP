@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manager Area | Dashboard</title>
+  <title>Employee Area | Dashboard</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -28,14 +28,14 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="overview.html">Dashboard</a></li>
-          <li><a href="requests.html">Requests</a></li>
-          <li><a href="tasks.html">Tasks</a></li>
-          <li><a href="employees.html">Employees</a></li>
+          <li class="active"><a href="e_dashboard.php">Dashboard</a></li>
+          <li><a href="e_requests.php">Requests</a></li>
+          <li><a href="e_tasks.php">Tasks</a></li>
+          <li><a href="e_profile.php">Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Welcome, Visar</a></li>
-          <li><a href="login.html">Logout</a></li>
+          <li><a href="e_login.php">Logout</a></li>
         </ul>
       </div>
     </div>
@@ -45,7 +45,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10">
-          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard</h1>
+          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard </h1>
         </div>
         <div class="col-md-2">
           <div class="dropdown create">
@@ -55,9 +55,9 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Tasks</a></li>
-              <li><a href="requests.html">See Requests</a></li>
-              <li><a href="employees.html">Employee</a></li>
+              <li><a type="button" data-toggle="modal" data-target="#makeRequest">Make Request</a></li>
+              <li><a href="#">See Requests</a></li>
+              <li><a href="#">Add Employee</a></li>
             </ul>
           </div>
         </div>
@@ -78,15 +78,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="overview.html" class="list-group-item active main-color-bg">
+            <a href="e_dashboard.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                  aria-hidden="true"></span> Requests <span class="badge">12</span></a>
-            <a href="tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                               aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="employees.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                   aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+            <a href="e_requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                   aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+            <a href="e_tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                                aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="e_profile.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Profile <span class="badge">203</span></a>
           </div>
 
           <div class="well">
@@ -110,13 +110,13 @@
 
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">Department Overview</h3>
+              <h3 class="panel-title">Profile Overview</h3>
             </div>
             <div class="panel-body">
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
-                  <h4>Employees</h4>
+                  <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 203</h2>
+                  <h4>Bonuses</h4>
                 </div>
               </div>
               <div class="col-md-3">
@@ -133,48 +133,48 @@
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
-                  <h4>Budget</h4>
+                  <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 12004</h2>
+                  <h4>Salary</h4>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Latest Users -->
+
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Latest Employees</h3>
+              <h3 class="panel-title">Department Statistics</h3>
             </div>
             <div class="panel-body">
               <table class="table table-striped table-hover">
                 <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Joined</th>
+                  <th>Your Rating</th>
+                  <th>Net Income</th>
+                  <th>Month</th>
                 </tr>
                 <tr>
-                  <td>Jill Smith</td>
-                  <td>jillsmith@gmail.com</td>
+                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
+                  <td>70000$</td>
                   <td>Dec 12, 2016</td>
                 </tr>
                 <tr>
-                  <td>Eve Jackson</td>
-                  <td>ejackson@yahoo.com</td>
+                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
+                  <td>60000$</td>
                   <td>Dec 13, 2016</td>
                 </tr>
                 <tr>
-                  <td>John Doe</td>
-                  <td>jdoe@gmail.com</td>
+                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
+                  <td>55000$</td>
                   <td>Dec 13, 2016</td>
                 </tr>
                 <tr>
-                  <td>Stephanie Landon</td>
-                  <td>landon@yahoo.com</td>
+                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
+                  <td>80000$</td>
                   <td>Dec 14, 2016</td>
                 </tr>
                 <tr>
-                  <td>Mike Johnson</td>
-                  <td>mjohnson@gmail.com</td>
+                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
+                  <td>69000$</td>
                   <td>Dec 15, 2016</td>
                 </tr>
               </table>
@@ -191,42 +191,49 @@
 
   <!-- Modals -->
 
-  <!-- Add Task -->
-  <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <!-- Make a Leave Request -->
+  <div class="modal fade" id="makeRequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form>
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Add Task</h4>
+            <h4 class="modal-title" id="myModalLabel">Leave Request</h4>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Task Title</label>
-              <input type="text" class="form-control" placeholder="Task Title">
+              <div class="form-group">
+                <label for="sel1">Request Leave</label>
+                <select class="form-control" id="sel1">
+                  <option>Vacation Leave</option>
+                  <option>Medical Leave</option>
+                  <option>Pregnancy Leave</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
-              <label>Task Body</label>
-              <textarea name="editor1" class="form-control" placeholder="Task Body"></textarea>
+              <label>Upload your documentation</label>
             </div>
+            <div class="form-group">
+              <label class="btn btn-default">
+                Browse <input type="file" hidden>
+              </label>
+            </div>
+
             <div class="checkbox">
               <label>
-                <input type="checkbox"> Published
+                <input type="checkbox"> Urgent
               </label>
             </div>
             <div class="form-group">
-              <label>Due Date</label>
-              <input type="text" class="form-control" placeholder="Add a time penalty...">
-            </div>
-            <div class="form-group">
-              <label>Task Budget</label>
-              <input type="text" class="form-control" placeholder="Add task budget...">
+              <label>Start Date</label>
+              <input type="date" class="form-control">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>

@@ -45,7 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <form id="login" action="landing.html" class="well">
+                    <form id="login" action="landing.php" class="well">
                         <div class="form-group">
                             <label>Host Name</label>
                             <input type="text" class="form-control" placeholder="Enter Hostname" />

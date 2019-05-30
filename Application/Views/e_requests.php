@@ -27,14 +27,14 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="e_dashboard.html">Dashboard</a></li>
-          <li class="active"><a href="e_requests.html">Requests</a></li>
-          <li><a href="e_tasks.html">Tasks</a></li>
-          <li><a href="e_profile.html">Profile</a></li>
+          <li><a href="e_dashboard.php">Dashboard</a></li>
+          <li class="active"><a href="e_requests.php">Requests</a></li>
+          <li><a href="e_tasks.php">Tasks</a></li>
+          <li><a href="e_profile.php">Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Welcome, Brad</a></li>
-          <li><a href="login.html">Logout</a></li>
+          <li><a href="login.php">Logout</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -68,7 +68,7 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="e_dashboard.html">Dashboard</a></li>
+        <li><a href="e_dashboard.php">Dashboard</a></li>
         <li class="active">Requests</li>
       </ol>
     </div>
@@ -79,15 +79,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="e_dashboard.html" class="list-group-item active main-color-bg">
+            <a href="e_dashboard.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="e_requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                aria-hidden="true"></span> Requests <span class="badge">12</span></a>
-            <a href="e_tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                 aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="e_profile.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                   aria-hidden="true"></span> Profile <span class="badge">203</span></a>
+            <a href="e_requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                   aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+            <a href="e_tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                                aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="e_profile.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Profile <span class="badge">203</span></a>
           </div>
 
           <div class="well">

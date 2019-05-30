@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manager Area | Employees</title>
-  <!-- Bootstrap core CSS -->
+  <title>Employee Area | Profile</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
@@ -28,14 +27,14 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="overview.html">Dashboard</a></li>
-          <li><a href="requests.html">Requests</a></li>
-          <li><a href="tasks.html">Tasks</a></li>
-          <li class="active"><a href="employees.html">Employees</a></li>
+          <li><a href="e_dashboard.php">Dashboard</a></li>
+          <li><a href="e_requests.php">Requests</a></li>
+          <li><a href="e_tasks.php">Tasks</a></li>
+          <li class="active"><a href="e_profile.php">Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Visar</a></li>
-          <li><a href="login.html">Logout</a></li>
+          <li><a href="#">Welcome, Brad</a></li>
+          <li><a href="e_login.php">Logout</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -46,7 +45,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10">
-          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Employees</h1>
+          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Profile</h1>
         </div>
         <div class="col-md-2">
           <div class="dropdown create">
@@ -56,9 +55,9 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Tasks</a></li>
-              <li><a href="requests.html">See Requests</a></li>
-              <li><a href="employees.html">Employee</a></li>
+              <li><a type="button" data-toggle="modal" data-target="#makeRequest">Make Request</a></li>
+              <li><a href="#">See Requests</a></li>
+              <li><a href="#">Add Employee</a></li>
             </ul>
           </div>
         </div>
@@ -69,8 +68,8 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li><a href="overview.html">Dashboard</a></li>
-        <li class="active">Employees</li>
+        <li><a href="e_dashboard.php">Dashboard</a></li>
+        <li class="active">Profile</li>
       </ol>
     </div>
   </section>
@@ -80,15 +79,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="overview.html" class="list-group-item active main-color-bg">
+            <a href="e_dashboard.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                  aria-hidden="true"></span> Requests <span class="badge">12</span></a>
-            <a href="tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                               aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="employees.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+            <a href="e_requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                   aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+            <a href="e_tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                                aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="e_profile.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Profile <span class="badge">203</span></a>
           </div>
 
           <div class="well">
@@ -112,50 +111,49 @@
           <!-- Website Overview -->
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">Employees</h3>
+              <h3 class="panel-title">Profile</h3>
             </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">
-                  <input class="form-control" type="text" placeholder="Filter Employees...">
+                  <input class="form-control" type="text" placeholder="Filter Users...">
                 </div>
               </div>
               <br>
               <table class="table table-striped table-hover">
                 <tr>
                   <th>Name</th>
-                  <th>Job Tittle</th>
-                  <th>Joined On</th>
-                  <th>Salary</th>
-                  <th>Bonuses</th>
+                  <th>Email</th>
+                  <th>Joined</th>
+                  <th></th>
                 </tr>
                 <tr>
                   <td>Jill Smith</td>
-                  <td>DevOps</td>
+                  <td>jillsmith@gmail.com</td>
                   <td>Dec 12, 2016</td>
-                  <td>100000</td>
-                  <td></td>
+                  <td><a class="btn btn-default" href="e_edit.html">Edit</a> <a class="btn btn-danger"
+                      href="#">Delete</a></td>
                 </tr>
                 <tr>
                   <td>Eve Jackson</td>
-                  <td>Python</td>
+                  <td>ejackson@yahoo.com</td>
                   <td>Dec 13, 2016</td>
-                  <td>120000</td>
-                  <td></td>
+                  <td><a class="btn btn-default" href="e_edit.html">Edit</a> <a class="btn btn-danger"
+                      href="#">Delete</a></td>
                 </tr>
                 <tr>
                   <td>Stephanie Landon</td>
-                  <td>Javscript</td>
+                  <td>landon@yahoo.com</td>
                   <td>Dec 14, 2016</td>
-                  <td>70000</td>
-                  <td>120</td>
+                  <td><a class="btn btn-default" href="e_edit.html">Edit</a> <a class="btn btn-danger"
+                      href="#">Delete</a></td>
                 </tr>
                 <tr>
                   <td>Mike Johnson</td>
-                  <td>Designer</td>
+                  <td>mjohnson@gmail.com</td>
                   <td>Dec 15, 2016</td>
-                  <td>90000</td>
-                  <td></td>
+                  <td><a class="btn btn-default" href="e_edit.html">Edit</a> <a class="btn btn-danger"
+                      href="#">Delete</a></td>
                 </tr>
               </table>
             </div>
@@ -172,42 +170,49 @@
 
   <!-- Modals -->
 
-  <!-- Add Task -->
-  <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <!-- Make a Leave Request -->
+  <div class="modal fade" id="makeRequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form>
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Add Task</h4>
+            <h4 class="modal-title" id="myModalLabel">Leave Request</h4>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Task Title</label>
-              <input type="text" class="form-control" placeholder="Task Title">
+              <div class="form-group">
+                <label for="sel1">Request Leave</label>
+                <select class="form-control" id="sel1">
+                  <option>Vacation Leave</option>
+                  <option>Medical Leave</option>
+                  <option>Pregnancy Leave</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
-              <label>Task Body</label>
-              <textarea name="editor1" class="form-control" placeholder="Task Body"></textarea>
+              <label>Upload your documentation</label>
             </div>
+            <div class="form-group">
+              <label class="btn btn-default">
+                Browse <input type="file" hidden>
+              </label>
+            </div>
+
             <div class="checkbox">
               <label>
-                <input type="checkbox"> Published
+                <input type="checkbox"> Urgent
               </label>
             </div>
             <div class="form-group">
-              <label>Due Date</label>
-              <input type="text" class="form-control" placeholder="Add a time penalty...">
-            </div>
-            <div class="form-group">
-              <label>Task Budget</label>
-              <input type="text" class="form-control" placeholder="Add task budget...">
+              <label>Start Date</label>
+              <input type="date" class="form-control">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
       </div>

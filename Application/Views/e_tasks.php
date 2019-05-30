@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Employee Area | Dashboard</title>
-
+  <title>Manager Area | Posts</title>
+  <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
@@ -28,16 +28,17 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="e_dashboard.html">Dashboard</a></li>
-          <li><a href="e_requests.html">Requests</a></li>
-          <li><a href="e_tasks.html">Tasks</a></li>
-          <li><a href="e_profile.html">Profile</a></li>
+          <li><a href="e_dashboard.php">Dashboard</a></li>
+          <li><a href="e_requests.php">Requests</a></li>
+          <li class="active"><a href="e_tasks.php">Tasks</a></li>
+          <li><a href="e_profile.php">Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Visar</a></li>
-          <li><a href="e_login.html">Logout</a></li>
+          <li><a href="#">Welcome, Brad</a></li>
+          <li><a href="e_login.php">Logout</a></li>
         </ul>
       </div>
+      <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -45,7 +46,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10">
-          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard </h1>
+          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tasks</h1>
         </div>
         <div class="col-md-2">
           <div class="dropdown create">
@@ -68,7 +69,8 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li class="active">Dashboard</li>
+        <li><a href="e_dashboard.php">Dashboard</a></li>
+        <li class="active">Tasks</li>
       </ol>
     </div>
   </section>
@@ -78,15 +80,15 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="e_dashboard.html" class="list-group-item active main-color-bg">
+            <a href="e_dashboard.php" class="list-group-item active main-color-bg">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
-            <a href="e_requests.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                    aria-hidden="true"></span> Requests <span class="badge">12</span></a>
-            <a href="e_tasks.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                                 aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
-            <a href="e_profile.html" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                   aria-hidden="true"></span> Profile <span class="badge">203</span></a>
+            <a href="e_requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                                                                   aria-hidden="true"></span> Request <span class="badge">12</span></a>
+            <a href="e_tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                                                                aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+            <a href="e_profile.php" class="list-group-item"><span class="glyphicon glyphicon-user"
+                                                                  aria-hidden="true"></span> Profile <span class="badge">203</span></a>
           </div>
 
           <div class="well">
@@ -107,81 +109,120 @@
           </div>
         </div>
         <div class="col-md-9">
-
+          <!-- To Be Completed-->
           <div class="panel panel-default">
             <div class="panel-heading main-color-bg">
-              <h3 class="panel-title">Profile Overview</h3>
+              <h3 class="panel-title">To be completed Tasks</h3>
             </div>
             <div class="panel-body">
-              <div class="col-md-3">
-                <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 203</h2>
-                  <h4>Bonuses</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control" type="text" placeholder="Filter Tasks...">
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
-                  <h4>Requests</h4>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
-                  <h4>Tasks</h4>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 12004</h2>
-                  <h4>Salary</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Department Statistics</h3>
-            </div>
-            <div class="panel-body">
+              <br>
               <table class="table table-striped table-hover">
                 <tr>
-                  <th>Your Rating</th>
-                  <th>Net Income</th>
-                  <th>Month</th>
+                  <th>Title</th>
+                  <th>Due Date</th>
+                  <th>Created On</th>
+                  <th>Bonuses</th>
+                  <th></th>
                 </tr>
                 <tr>
-                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
-                  <td>70000$</td>
+                  <td>OOP</td>
+                  <td></td>
                   <td>Dec 12, 2016</td>
+                  <td>100</td>
+                  <td><a class="btn btn-primary" href="#">Take It</a></td>
                 </tr>
                 <tr>
-                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
-                  <td>60000$</td>
+                  <td>PHP</td>
+                  <td></td>
                   <td>Dec 13, 2016</td>
+                  <td>30</td>
+                  <td><a class="btn btn-primary" href="#">Take It</a></td>
                 </tr>
                 <tr>
-                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
-                  <td>55000$</td>
+                  <td>Computer Networking</td>
+                  <td></td>
                   <td>Dec 13, 2016</td>
+                  <td>30</td>
+                  <td><a class="btn btn-primary" href="#">Take It</a></td>
                 </tr>
                 <tr>
-                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
-                  <td>80000$</td>
+                  <td>Neural Networks</td>
+                  <td></td>
                   <td>Dec 14, 2016</td>
-                </tr>
-                <tr>
-                  <td><span class="glyphicon glyphicon-star" aria-hidden="true"></td>
-                  <td>69000$</td>
-                  <td>Dec 15, 2016</td>
+                  <td>30</td>
+                  <td><a class="btn btn-primary" href="#">Take It</a></td>
                 </tr>
               </table>
             </div>
           </div>
+
+        </div>
+
+        <div class="col-md-12">
+          <!-- Completed Tasks -->
+          <div class="panel panel-default">
+            <div class="panel-heading main-color-bg">
+              <h3 class="panel-title">Completed Tasks</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control" type="text" placeholder="Filter Tasks...">
+                </div>
+              </div>
+              <br>
+              <table class="table table-striped table-hover">
+                <tr>
+                  <th>Task Title</th>
+                  <th>Bonuses</th>
+                  <th>Created On</th>
+                  <th>Task Description</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>Web Dev</td>
+                  <td></td>
+                  <td>Dec 12, 2016</td>
+                  <td></td>
+                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Design</td>
+                  <td></td>
+                  <td>Dec 13, 2016</td>
+                  <td></td>
+                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Java</td>
+                  <td></span></td>
+                  <td>Dec 13, 2016</td>
+                  <td></td>
+                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>OOP</td>
+                  <td></td>
+                  <td>Dec 14, 2016</td>
+                  <td></td>
+                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -244,8 +285,10 @@
     CKEDITOR.replace('editor1');
   </script>
 
-
-  <script src="../../Libraries/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 
