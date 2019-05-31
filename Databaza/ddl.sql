@@ -1,4 +1,4 @@
-CREATE TABLE `managmentsystem`.`new_table` (
+CREATE TABLE `managmentsystem`.`managers` (
   `manager_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `surname` VARCHAR(100) NOT NULL,
