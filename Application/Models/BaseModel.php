@@ -1,5 +1,6 @@
 <?php
 
+
 class BaseModel{
     protected $adapter;
     protected $table;
@@ -17,7 +18,7 @@ class BaseModel{
         $columns=$this->getColumns();
         foreach ($columns as $column){
             $this->columnNames[]=$column->Field;
-            $this->{columnName}=null;
+            $this->{$columnNames}=null;
         }
     }
 
