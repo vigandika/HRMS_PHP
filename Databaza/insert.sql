@@ -1,10 +1,10 @@
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('1', 'Secretary');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('2', 'Administrator');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('3', 'Developer');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('4', 'DevOps');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('5', 'BackEnd');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('6', 'Designer');
-INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_tittle`) VALUES ('7', 'Editor');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('1', 'Secretary');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('2', 'Administrator');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('3', 'Developer');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('4', 'DevOps');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('5', 'BackEnd');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('6', 'Designer');
+INSERT INTO `managmentsystem`.`jobs` (`job_id`, `job_title`) VALUES ('7', 'Editor');
 
 
 INSERT INTO `managmentsystem`.`requests` (`request_id`, `request_tittle`) VALUES ('1', 'vacation_leave');
