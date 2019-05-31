@@ -6,5 +6,8 @@ define('DBNAME', 'managmentsystem');
 define('DBUSER', 'root');
 define('DBPASS', '');
 
+header('Location: ../Views/landing.php');
+
+echo "this";
 
 ?>
