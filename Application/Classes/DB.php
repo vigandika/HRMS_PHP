@@ -36,13 +36,19 @@ class DB{
                     $i++;
                 }
             }
+
             if($this->query->execute()){
-                $this->result=$this->query->fetchAll(PDO::FETCH_OBJ);
-                $this->count=$this->query->rowCount();
-                $this->lastInsertedId=$this->pdo->lastInsertId();
+                try {
+                    $this->result = $this->query->fetchAll(PDO::FETCH_ASSOC);
+                    $this->count = $this->query->rowCount();
+                    $this->lastInsertedId = $this->pdo->lastInsertId();
+                }catch (PDOException $exception){
+                    $exception->getTrace();
+                }
             }else{
                 $this->error=true;
             }
+
         }
         return $this;
     }

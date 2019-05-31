@@ -4,10 +4,6 @@
 define('DBHOST', 'localhost');
 define('DBNAME', 'managmentsystem');
 define('DBUSER', 'root');
-define('DBPASS', '');
-
-header('Location: ../Views/landing.php');
-
-echo "this";
+define('DBPASS', 'vitiakademik');
 
 ?>

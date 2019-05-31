@@ -1,28 +1,47 @@
 <?php
-
+include_once '../Classes/DB.php';
 
 class BaseModel{
     protected $adapter;
-    protected $table;
-    protected $modelName;
-    protected $columnNames=array();
-    public $id;
+    protected $tableName='employees';
+    protected $columnNames=[];
+    protected $primaryKey;
 
-    public function __construct($table){
-        $this->adapter=DB::getInstance();
-        $this->table=$table;
-        $this->setTableColumns();
+    public function __construct(){
+       $this->adapter=DB::getInstance();
     }
 
-    protected function setTableColumns(){
-        $columns=$this->getColumns();
-        foreach ($columns as $column){
-            $this->columnNames[]=$column->Field;
-            $this->{$columnNames}=null;
+    public function getColumnNames(){
+        $sql="SHOW COLUMNS FROM $this->tableName";
+        $this->adapter->runQuery($sql);
+        foreach ($this->adapter->results() as $var){
+            $this->columnNames[]=$var['Field'];
         }
+        return $this->columnNames;
     }
 
-    public function getColumns(){
-        return $this->adapter->getColumns($this->table);
+    public function getPrimaryKey(){
+        $sql="SHOW KEYS FROM $this->tableName WHERE Key_name = 'PRIMARY'";
+        $this->adapter->runQuery($sql);
+        $this->primaryKey=$this->adapter->results()[0]['Column_name'];
+        return $this->primaryKey;
+    }
+
+    public function insert($table,$fields=array()){
+        $fieldString='';
+        $valueString='';
+        $values=array();
+
+        foreach ($fields as $field=>$value){
+            $fieldString.='`'.$field.'`,';
+            $valueString.='?,';
+            $values[]=$value;
+        }
+        $fieldString=rtrim($fieldString,',');
+        $valueString= rtrim($valueString,',');
+
+        $sql="INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
+        $this->adapter->runQuery($sql,$values);
+
     }
 }
