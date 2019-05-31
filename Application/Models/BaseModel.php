@@ -7,8 +7,9 @@ class BaseModel{
     protected $columnNames=[];
     protected $primaryKey;
 
-    public function __construct(){
+    public function __construct($tableName){
        $this->adapter=DB::getInstance();
+       $this->tableName=$tableName;
     }
 
     public function getColumnNames(){

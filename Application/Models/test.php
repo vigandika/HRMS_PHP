@@ -2,10 +2,7 @@
 
 include 'autoinclude.php';
 
-$model=new BaseModel();
-foreach($model->getColumnNames() as $var){
-    echo $var."<br>";
-}
-
+$requests= new RequestsModel('requests_made');
+print_r($requests->getUnApprovedRequests());
 
 
