@@ -1,6 +1,5 @@
 <?php
 include_once 'dbconfig.php';
-//Klasa osht singleton dmth e ka veq nje objekt per ket arsye edhe konstruktori osht private
 
 class DB{
 
