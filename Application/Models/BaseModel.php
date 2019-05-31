@@ -1,5 +1,6 @@
 <?php
 
+
 class BaseModel{
     protected $adapter;
     protected $table;
