@@ -3,7 +3,7 @@ include_once '../Classes/DB.php';
 
 class BaseModel{
     protected $adapter;
-    protected $tableName='employees';
+    protected $tableName;
     protected $columnNames=[];
     protected $primaryKey;
 
@@ -25,23 +25,5 @@ class BaseModel{
         $this->adapter->runQuery($sql);
         $this->primaryKey=$this->adapter->results()[0]['Column_name'];
         return $this->primaryKey;
-    }
-
-    public function insert($table,$fields=array()){
-        $fieldString='';
-        $valueString='';
-        $values=array();
-
-        foreach ($fields as $field=>$value){
-            $fieldString.='`'.$field.'`,';
-            $valueString.='?,';
-            $values[]=$value;
-        }
-        $fieldString=rtrim($fieldString,',');
-        $valueString= rtrim($valueString,',');
-
-        $sql="INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
-        $this->adapter->runQuery($sql,$values);
-
     }
 }
