@@ -1,5 +1,5 @@
 <?php
-include_once 'autoinclude.php';
+namespace Models;
 class EmployeesModel extends BaseModel{
 
 

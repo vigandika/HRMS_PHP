@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 include_once '../Classes/DB.php';
 
 class BaseModel{

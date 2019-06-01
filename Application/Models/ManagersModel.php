@@ -1,6 +1,5 @@
 <?php
-include 'autoinclude.php';
-
+namespace Models;
 class ManagersModel extends BaseModel{
 
     public function isUser($username,$password){
