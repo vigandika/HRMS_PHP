@@ -8,4 +8,5 @@ class DepartmentsModel extends BaseModel{
         $this->adapter->runQuery($sql);
         return $this->adapter->results();
     }
+    
 }
