@@ -2,7 +2,11 @@
 
 include 'autoinclude.php';
 
-$requests= new RequestsModel('requests_made');
-print_r($requests->getUnApprovedRequests());
+$model=new RequestsModel('requests');
 
+$param=[
+    'request_title'=>'guess'
+];
+$model->insert($param);
+echo "success";
 

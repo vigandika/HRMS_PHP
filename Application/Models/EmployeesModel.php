@@ -9,4 +9,11 @@ class EmployeesModel extends BaseModel{
         return $this->adapter->results();
     }
 
+    public function findByUsername($username){
+        $sql="SELECT * from $this->tableName WHERE username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
 }

@@ -27,4 +27,44 @@ class BaseModel{
         $this->primaryKey=$this->adapter->results()[0]['Column_name'];
         return $this->primaryKey;
     }
+
+    public function insert($fields=array()){
+        $fieldString='';
+        $fieldValue='';
+        $values=array();
+        foreach ($fields as $field=>$value){
+            $fieldString.='`'.$field.'`,';
+            $fieldValue.='?,';
+            $values[]=$value;
+        }
+        $fieldString=rtrim($fieldString,',');
+        $fieldValue=rtrim($fieldValue,',');
+
+        $sql="INSERT INTO $this->tableName ({$fieldString}) VALUES ({$fieldValue})";
+        $this->adapter->runQuery($sql,$values);
+    }
+
+    public function update($id,$fields=array()){
+        $fieldString='';
+        $values=[];
+        foreach($fields as $field=>$value){
+            $fieldString.=' '.$field.'=?,';
+            $values[]=$value;
+        }
+        $fieldString=trim($fieldString);
+        $fieldString=rtrim($fieldString,',');
+        $sql="UPDATE {$this->tableName} SET {$fieldString} WHERE {$this->getPrimaryKey()}={$id}";
+        $this->adapter->runQuery($sql,$values);
+    }
+
+    public function delete($id){
+        $sql="DELETE FROM $this->tableName WHERE {$this->getPrimaryKey()} =?";
+        $param=[$id];
+        if($this->adapter->runQuery($sql,$param)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
