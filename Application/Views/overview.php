@@ -33,8 +33,9 @@
           <li><a href="tasks.php">Tasks</a></li>
           <li><a href="employees.php">Employees</a></li>
         </ul>
+<!--          employees name-->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Visar</a></li>
+          <li><a href="#">Welcome, </a></li>
           <li><a href="login.php">Logout</a></li>
         </ul>
       </div>
