@@ -129,17 +129,34 @@
                   <th>Salary</th>
                   <th>Bonuses</th>
                 </tr>
-                  <?php
-                  foreach ($args['employeeStats'] as $row) {
-                      echo "<tr>";
-                      echo "<td>".$row['name']."</td>";
-                      echo "<td>".$row['job_title']."</td>";
-                      echo "<td>".$row['start_date']."</td>";
-                      echo "<td>".$row['salary']."</td>";
-                      echo "<td>".$row['bonuses']."</td>";
-                      echo "</tr>";
-                  }
-                  ?>
+                <tr>
+                  <td>Jill Smith</td>
+                  <td>DevOps</td>
+                  <td>Dec 12, 2016</td>
+                  <td>100000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Eve Jackson</td>
+                  <td>Python</td>
+                  <td>Dec 13, 2016</td>
+                  <td>120000</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Stephanie Landon</td>
+                  <td>Javscript</td>
+                  <td>Dec 14, 2016</td>
+                  <td>70000</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <td>Mike Johnson</td>
+                  <td>Designer</td>
+                  <td>Dec 15, 2016</td>
+                  <td>90000</td>
+                  <td></td>
+                </tr>
               </table>
             </div>
           </div>

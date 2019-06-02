@@ -20,13 +20,6 @@ class EmployeesModel extends BaseModel{
         return $this->adapter->results();
     }
 
-    public function getByJob($deptName){
-        $sql="SELECT name, job_title,start_date,salary,bonuses FROM $this->tableName NATURAL JOIN jobs NATURAL JOIN  departments WHERE department_name=?";
-        $param=[$deptName];
-        $this->adapter->runQuery($sql,$param);
-        return $this->adapter->results();
-    }
-
     public function employeesCount($deptName){
         $this->getByDepartment($deptName);
         return $this->adapter->count();
