@@ -11,7 +11,7 @@ class TasksModel extends BaseModel{
     }
 
     public function getCompleted($deptName){
-        $sql="SELECT *FROM $this->tableName NATURAL  JOIN departments WHERE  department_name=? AND emp_id IS NOT NULL";
+        $sql="SELECT *FROM $this->tableName ,employees NATURAL  JOIN departments  WHERE  tasks.emp_id=employees.emp_id AND department_name=? AND tasks.emp_id IS NOT NULL";
         $param=[$deptName];
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();

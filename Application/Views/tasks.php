@@ -126,30 +126,16 @@
                   <th>Created On</th>
                   <th>Bonuses</th>
                 </tr>
-                <tr>
-                  <td>OOP</td>
-                  <td></td>
-                  <td>Dec 12, 2016</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>PHP</td>
-                  <td></td>
-                  <td>Dec 13, 2016</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>Computer Networking</td>
-                  <td></td>
-                  <td>Dec 13, 2016</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>Neural Networks</td>
-                  <td></td>
-                  <td>Dec 14, 2016</td>
-                  <td>100</td>
-                </tr>
+                  <?php
+                  foreach ($args['toBeCompletedTasks']as $row){
+                      echo "<tr>";
+                      echo "<td>".$row['task_title']."</td>";
+                      echo "<td>".$row['task_documentation']."</td>";
+                      echo "<td>".$row['date_created']."</td>";
+                      echo "<td>".$row['bonuses']."</td>";
+                      echo "</tr>";
+                  }
+                  ?>
               </table>
             </div>
           </div>
@@ -177,38 +163,17 @@
                   <th>Task Description</th>
                   <th></th>
                 </tr>
-                <tr>
-                  <td>Web Dev</td>
-                  <td>Visar Buza</td>
-                  <td>Dec 12, 2016</td>
-                  <td></td>
-                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Design</td>
-                  <td>Visar Buza</td>
-                  <td>Dec 13, 2016</td>
-                  <td></td>
-                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Java</td>
-                  <td>Vigan Dika</span></td>
-                  <td>Dec 13, 2016</td>
-                  <td></td>
-                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>OOP</td>
-                  <td>Visar Buza</td>
-                  <td>Dec 14, 2016</td>
-                  <td></td>
-                  <td><a class="btn btn-default" href="#">Edit</a> <a class="btn btn-danger" href="#">Delete</a>
-                  </td>
-                </tr>
+                  <?php
+                  foreach ($args['completedTasks']as $row){
+                      echo "<tr>";
+                      echo "<td>".$row['task_title']."</td>";
+                      echo "<td>".$row['name']."</td>";
+                      echo "<td>".$row['date_created']."</td>";
+                      echo "<td>".$row['task_documentation']."</td>";
+                      echo "<td><a class=\"btn btn-default\" href=\"#\">Edit</a> <a class=\"btn btn-danger\" href=\"#\">Delete</a></td>";
+                      echo "</tr>";
+                  }
+                  ?>
               </table>
             </div>
           </div>
