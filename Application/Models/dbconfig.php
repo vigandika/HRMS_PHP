@@ -4,6 +4,6 @@
 define('DBHOST', 'localhost');
 define('DBNAME', 'managmentsystem');
 define('DBUSER', 'root');
-define('DBPASS', 'itsfuntostayatymca');
+define('DBPASS', 'vitiakademik');
 
 ?>
