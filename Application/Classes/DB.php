@@ -1,6 +1,5 @@
 <?php
 include_once 'dbconfig.php';
-
 class DB{
 
     private static $instance;

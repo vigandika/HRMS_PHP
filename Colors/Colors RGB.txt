@@ -1,4 +1,0 @@
-Dark blue	#2B3A42
-Blue		#3F5765	
-Light Blue	#BDD4DE
-Orange		#FF530D
