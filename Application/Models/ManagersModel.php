@@ -21,5 +21,12 @@ class ManagersModel extends BaseModel{
         return $this->adapter->results();
     }
 
+    public function getName($username){
+        $sql="SELECT name FROM $this->tableName WHERE username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'TasksModel.php';
+include_once 'ManagersModel.php';
 
-$var=new \Models\TasksModel('tasks');
-print_r($var->numberOfCompletedTasks());
+$var =new \Models\ManagersModel('managers');
+print_r($var->getName("vigandika"));
