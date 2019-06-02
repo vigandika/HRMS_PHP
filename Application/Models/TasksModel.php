@@ -10,9 +10,17 @@ class TasksModel extends BaseModel{
         return $this->adapter->results();
     }
 
-    public function getCompleted(){
-        $sql="SELECT *FROM $this->tableName WHERE emp_id IS NOT NULL";
-        $this->adapter->runQuery($sql);
+    public function getCompleted($deptName){
+        $sql="SELECT *FROM $this->tableName NATURAL  JOIN departments WHERE  department_name=? AND emp_id IS NOT NULL";
+        $param=[$deptName];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
+    public function getToBeCompleted($deptName){
+        $sql="SELECT *FROM $this->tableName NATURAL  JOIN departments WHERE  department_name=? AND emp_id IS  NULL";
+        $param=[$deptName];
+        $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
     }
 
@@ -21,9 +29,4 @@ class TasksModel extends BaseModel{
         return $this->adapter->count();
     }
 
-    public function getToBeCompleted(){
-        $sql="SELECT *FROM $this->tableName WHERE emp_id IS NULL";
-        $this->adapter->runQuery($sql);
-        return $this->adapter->results();
-    }
 }
