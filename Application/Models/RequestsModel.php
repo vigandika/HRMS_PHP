@@ -1,6 +1,6 @@
 <?php
-include "autoinclude.php";
-
+namespace Models;
+include_once 'BaseModel.php';
 class RequestsModel extends BaseModel{
 
 

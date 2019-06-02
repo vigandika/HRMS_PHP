@@ -1,6 +1,6 @@
 <?php
+namespace Models;
 include_once '../Classes/DB.php';
-
 class BaseModel{
     protected $adapter;
     protected $tableName;
@@ -8,7 +8,7 @@ class BaseModel{
     protected $primaryKey;
 
     public function __construct($tableName){
-       $this->adapter=DB::getInstance();
+       $this->adapter=\DB::getInstance();
        $this->tableName=$tableName;
     }
 

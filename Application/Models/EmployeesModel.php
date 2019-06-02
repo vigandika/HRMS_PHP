@@ -1,7 +1,7 @@
 <?php
-include_once 'autoinclude.php';
+namespace Models;
+include_once 'BaseModel.php';
 class EmployeesModel extends BaseModel{
-
 
     public function isUser($username,$password){
         $sql="SELECT * FROM $this->tableName WHERE username=? and password=?";

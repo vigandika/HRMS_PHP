@@ -1,6 +1,3 @@
 <?php
-include 'autoinclude.php';
 
-
-
-
+include_once 'EmployeesModel.php';
