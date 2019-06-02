@@ -48,11 +48,11 @@
           <form method="post" id="login" action="Overview" class="well">
             <div class="form-group">
               <label>Username</label>
-              <input name="username" type="text" class="form-control" placeholder="Enter Username" />
+              <input required name="username" type="text" class="form-control" placeholder="Enter Username" />
             </div>
             <div class="form-group">
               <label>Password</label>
-              <input name="password" type="password" class="form-control" placeholder="Password" />
+              <input required name="password" type="password" class="form-control" placeholder="Password" />
             </div>
             <button type="submit" class="btn btn-default btn-block">
               Login
@@ -62,6 +62,13 @@
       </div>
     </div>
   </section>
+  <?php
+  if($args[0]){
+      echo "<div class=\"alert alert-warning\">";
+      echo "Wrong Username or password";
+      echo "</div>";
+  }
+  ?>
 
   <footer id="footer">
     <p>Copyright HRMS, &copy; 2019</p>

@@ -5,5 +5,4 @@ class DefaultController{
     public function index() {
         return \ViewHelper::render("login");
     }
-
 }

@@ -20,7 +20,8 @@ class OverviewController{
 
             return \ViewHelper::render("overview",$args);
         }else{
-            return \ViewHelper::render("login");
+            $error=[true];
+            return \ViewHelper::render("login",$error);
         }
     }
 }
