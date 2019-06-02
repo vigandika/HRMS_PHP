@@ -22,7 +22,7 @@ class RequestsController{
 
         $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
             'numberOfRequests'=>$numberOfRequests, 'pendingRequests' => $pendingRequests];
-        
+
         return \ViewHelper::render("requests",$args);
 
 

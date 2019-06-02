@@ -115,25 +115,25 @@
             <div class="panel-body">
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $args['numberOfEmployees'] ?></h2>
+                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span></h2><h2> <?php echo $args['numberOfEmployees'] ?></h2>
                   <h4>Employees</h4>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <?php echo $args['requests'] ?></h2>
+                  <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> </h2><h2><?php echo $args['requests'] ?></h2>
                   <h4>Requests</h4>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo $args['tasks'] ?></h2>
+                  <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </h2><h2><?php echo $args['tasks'] ?></h2>
                   <h4>Tasks</h4>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> <?php echo $args['budget'][0]['budget'] ?></h2>
+                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></h2><h2> <?php echo $args['budget'][0]['budget'] ?></h2>
                   <h4>Budget</h4>
                 </div>
               </div>
