@@ -42,7 +42,7 @@ class OverviewController{
             $_SESSION['numberOfCompletedTasks']=$numberOfCompletedTasks;
             $_SESSION['numberOfRequests']=$numberOfRequests;
             $_SESSION['user']=$args['user'];
-
+            $_SESSION['departmentName'] = $departmentName;
             return \ViewHelper::render("overview",$args);
         }else{
             $error=[true];

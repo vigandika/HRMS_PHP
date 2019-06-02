@@ -53,7 +53,7 @@ class EmployeesModel extends BaseModel{
     }
     public function getTaskCompletedEmp($username){
         $sql="select task_title, date_created, task_documentation
-       from   tasks  inner join employees where username=?";
+       from   tasks NATURAL JOIN employees WHERE username=?";
         $param=[$username];
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
@@ -68,7 +68,7 @@ class EmployeesModel extends BaseModel{
     }
 
     public function getDepTasks($username){
-        $sql="select distinct task_title, date_created, task_documentation  from tasks inner join employees
+        $sql="select distinct task_title, date_created, task_documentation  from tasks natural join employees
         where tasks.department_id=(select department_id from employees where username=?);";
         $param=[$username];
         $this->adapter->runQuery($sql,$param);
