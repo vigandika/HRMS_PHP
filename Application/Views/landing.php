@@ -7,8 +7,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>HRMS</title>
-    <link href="../../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/cover.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Public/css/cover.css" rel="stylesheet" />
   </head>
 
   <body class="text-center">
@@ -17,8 +17,8 @@
         <h1 class="cover-heading">HRMS</h1>
         <p class="lead">Click on the category you belong</p>
         <p class="lead">
-          <a href="login.php" class="btn btn-lg btn-secondary">Manager</a>
-          <a href="e_login.php" class="btn btn-lg btn-secondary">Employee</a>
+          <a href="Login" class="btn btn-lg btn-secondary">Manager</a>
+          <a href="e_login" class="btn btn-lg btn-secondary">Employee</a>
         </p>
       </main>
 
