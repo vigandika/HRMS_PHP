@@ -48,13 +48,14 @@
           <form method="post" id="login" action="Overview" class="well">
             <div class="form-group">
               <label>Username</label>
-              <input required name="username" type="text" class="form-control" placeholder="Enter Username" />
+              <input required name="username" type="text" value="<?php echo @$_COOKIE['cid']?>" class="form-control" placeholder="Enter Username" />
             </div>
             <div class="form-group">
               <label>Password</label>
               <input required name="password" type="password" class="form-control" placeholder="Password" />
             </div>
-            <button type="submit" class="btn btn-default btn-block">
+              <input type="checkbox" name="ch" ><label>Remember Me</label>
+            <button type="submit" name="signin" class="btn btn-default btn-block">
               Login
             </button>
           </form>
@@ -83,3 +84,19 @@
 </body>
 
 </html>
+
+
+<?php
+@$id=$_POST['username'];
+if(isset($_POST['signin']))
+{
+
+        if($_POST['ch']==true)
+        {
+            setcookie("cid",$id,time()+60*60*24);
+//            header('location:../Controllers/DefaultController.php');
+        }
+//        header('location:../Controllers/DefaultController.php');
+
+}
+?>
