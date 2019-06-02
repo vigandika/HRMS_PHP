@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
@@ -134,7 +133,7 @@
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
+                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> <?php echo $args['budget'][0]['budget'] ?></h2>
                   <h4>Budget</h4>
                 </div>
               </div>
@@ -153,31 +152,16 @@
                   <th>Email</th>
                   <th>Joined</th>
                 </tr>
-                <tr>
-                  <td>Jill Smith</td>
-                  <td>jillsmith@gmail.com</td>
-                  <td>Dec 12, 2016</td>
-                </tr>
-                <tr>
-                  <td>Eve Jackson</td>
-                  <td>ejackson@yahoo.com</td>
-                  <td>Dec 13, 2016</td>
-                </tr>
-                <tr>
-                  <td>John Doe</td>
-                  <td>jdoe@gmail.com</td>
-                  <td>Dec 13, 2016</td>
-                </tr>
-                <tr>
-                  <td>Stephanie Landon</td>
-                  <td>landon@yahoo.com</td>
-                  <td>Dec 14, 2016</td>
-                </tr>
-                <tr>
-                  <td>Mike Johnson</td>
-                  <td>mjohnson@gmail.com</td>
-                  <td>Dec 15, 2016</td>
-                </tr>
+                  <?php
+                  $array=$args['employees'];
+                  foreach ($array as $var){
+                      echo "<tr>";
+                      echo "<td>".$var['name']."</td>";
+                      echo "<td>".$var['surname']."</td>";
+                      echo "<td>".$var['start_date']."</td>";
+                      echo "</tr>";
+                  }
+                  ?>
               </table>
             </div>
           </div>

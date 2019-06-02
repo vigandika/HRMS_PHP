@@ -14,7 +14,7 @@ class EmployeesModel extends BaseModel{
         }
     }
     public function getByDepartment($deptName){
-        $sql="SELECT FROM $this->tableName NATURAL JOIN departments WHERE department_name=?";
+        $sql="SELECT name,surname, start_date FROM $this->tableName NATURAL JOIN departments WHERE department_name=?";
         $param=[$deptName];
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'EmployeesModel.php';
+include_once 'DepartmentsModel.php';
 
-$var=new \Models\EmployeesModel('employees');
-print_r($var->getByDepartment('Head Office'));
+$var= new \Models\DepartmentsModel('departments');
+print_r($var->getBudget('Head Office'));

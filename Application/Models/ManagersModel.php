@@ -14,9 +14,9 @@ class ManagersModel extends BaseModel{
         }
     }
 
-    public function getByDepartment($deptName){
-        $sql="SELECT name FROM $this->tableName NATURAL JOIN departments WHERE department_name=?";
-        $param=[$deptName];
+    public function getDepartment($username){
+        $sql="SELECT department_name FROM $this->tableName NATURAL JOIN departments WHERE username=?";
+        $param=[$username];
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
     }

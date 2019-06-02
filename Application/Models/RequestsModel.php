@@ -23,4 +23,8 @@ class RequestsModel extends BaseModel{
     public function getApprovedByDepartment($deptName){
 
     }
+
+    public function getNumberOfRequestsPerDepartment($deptName){
+
+    }
 }
