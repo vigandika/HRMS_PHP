@@ -31,4 +31,55 @@ class EmployeesModel extends BaseModel{
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
     }
+    public function getBonuses($username){
+        $sql="SELECT bonuses FROM $this->tableName WHERE username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
+    public function getEmpSalary($username){
+        $sql="SELECT salary FROM $this->tableName WHERE username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+    public function getEmpApprovedReq($username){
+        $sql="select request_title, request_date, approval_date
+        from requests_made natural join employees natural join requests where username=? and approval='YES'";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+    public function getTaskCompletedEmp($username){
+        $sql="select task_title, date_created, task_documentation
+       from   tasks  inner join employees where username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+
+    }
+    public function getEmpColleagues($username){
+        $sql="select * from  employees
+        where department_id=(select department_id from employees where username=? AND not username=?";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
+    public function getDepTasks($username){
+        $sql="select distinct task_title, date_created, task_documentation  from tasks inner join employees
+        where tasks.department_id=(select department_id from employees where username=?);";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+    public function getApprovedRequestsEmp($username){
+        $sql="select request_title, request_date, approval_date from requests_made natural join employees natural join requests
+        where username=? and approval='YES'";
+        $param=[$username];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
 }
