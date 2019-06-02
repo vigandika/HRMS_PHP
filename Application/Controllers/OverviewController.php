@@ -3,8 +3,17 @@ namespace Controllers;
 
 class OverviewController{
     public function index() {
-        $username=$_POST['username'];
-        $password=$_POST['password'];
+        session_start();
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+            $password=$_SESSION['password'];
+        }else {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $_SESSION['username']=$username;
+            $_SESSION['password']=$password;
+        }
+
         $employee=new \Models\EmployeesModel('employees');
         $manager=new \Models\ManagersModel('managers');
         $department=new \Models\DepartmentsModel('departments');

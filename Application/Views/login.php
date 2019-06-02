@@ -63,7 +63,7 @@
     </div>
   </section>
   <?php
-  if($args[0]){
+  if(array_key_exists(0,$args)){
       echo "<div class=\"alert alert-warning\">";
       echo "Wrong Username or password";
       echo "</div>";
