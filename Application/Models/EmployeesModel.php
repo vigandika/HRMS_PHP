@@ -20,6 +20,11 @@ class EmployeesModel extends BaseModel{
         return $this->adapter->results();
     }
 
+    public function employeesCount($deptName){
+        $this->getByDepartment($deptName);
+        return $this->adapter->count();
+    }
+
     public function findByUsername($username){
         $sql="SELECT {$this->getPrimaryKey()} from $this->tableName WHERE username=?";
         $param=[$username];
