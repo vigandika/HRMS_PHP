@@ -16,6 +16,11 @@ class TasksModel extends BaseModel{
         return $this->adapter->results();
     }
 
+    public function numberOfCompletedTasks(){
+        $this->getCompleted();
+        return $this->adapter->count();
+    }
+
     public function getToBeCompleted(){
         $sql="SELECT *FROM $this->tableName WHERE emp_id IS NULL";
         $this->adapter->runQuery($sql);

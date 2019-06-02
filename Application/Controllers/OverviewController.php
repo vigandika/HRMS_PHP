@@ -15,8 +15,9 @@ class OverviewController{
 
             $departmentName=$manager->getDepartment($username)[0]['department_name'];
             $employees=$employee->getByDepartment($departmentName);
+            $numberOfEmployees=$employee->employeesCount($departmentName);
             $budget=$department->getBudget($departmentName);
-            $args=['department'=>$department,'employees'=>$employees,"budget"=>$budget];
+            $args=['department'=>$department,'employees'=>$employees,"budget"=>$budget,"numberOfEmployees"=>$numberOfEmployees];
 
             return \ViewHelper::render("overview",$args);
         }else{

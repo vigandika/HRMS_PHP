@@ -1,6 +1,6 @@
 <?php
 
-include_once 'EmployeesModel.php';
+include_once 'TasksModel.php';
 
-$var=new \Models\EmployeesModel('employees');
-print_r($var->employeesCount('Human Resources'));
+$var=new \Models\TasksModel('tasks');
+print_r($var->numberOfCompletedTasks());
