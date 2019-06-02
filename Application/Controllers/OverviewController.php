@@ -1,6 +1,6 @@
 <?php
 namespace Controllers;
-class LoginController{
+class OverviewController{
     public function index() {
         $username=$_POST['username'];
         $password=$_POST['password'];

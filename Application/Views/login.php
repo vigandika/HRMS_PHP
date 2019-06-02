@@ -45,7 +45,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <form method="post" id="login" action="Login" class="well">
+          <form method="post" id="login" action="Overview" class="well">
             <div class="form-group">
               <label>Username</label>
               <input name="username" type="text" class="form-control" placeholder="Enter Username" />
