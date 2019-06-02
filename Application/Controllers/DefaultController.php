@@ -6,8 +6,5 @@ class DefaultController{
         session_start();
         session_destroy();
         return \ViewHelper::render("login");
-
-
-
     }
 }
