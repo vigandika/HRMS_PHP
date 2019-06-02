@@ -86,17 +86,3 @@
 </html>
 
 
-<?php
-@$id=$_POST['username'];
-if(isset($_POST['signin']))
-{
-
-        if($_POST['ch']==true)
-        {
-            setcookie("cid",$id,time()+60*60*24);
-//            header('location:../Controllers/DefaultController.php');
-        }
-//        header('location:../Controllers/DefaultController.php');
-
-}
-?>
