@@ -25,7 +25,7 @@ class RequestsModel extends BaseModel{
     }
 
     public function getApprovedByDepartment($deptName){
-        $sql="SELECT name , request_title,request_date FROM requests_made NATURAL JOIN employees NATURAL JOIN departments 
+        $sql="SELECT name , request_title,request_date ,approval_date FROM requests_made NATURAL JOIN employees NATURAL JOIN departments 
         NATURAL JOIN requests WHERE approval=? AND department_name=?";
         $param=['YES',$deptName];
         $this->adapter->runQuery($sql,$param);

@@ -34,7 +34,7 @@
         </ul>
 <!--          employees name-->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome,<?php echo $args["user"]; ?> </a></li>
+          <li><a href="#">Welcome, <?php echo $args["user"]; ?> </a></li>
           <li><a href="Default">Logout</a></li>
         </ul>
       </div>

@@ -34,7 +34,7 @@
           <li class="active"><a href="#">Employees</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Visar</a></li>
+          <li><a href="#">Welcome, <?php echo $args['user']; ?></a></li>
           <li><a href="Default">Logout</a></li>
         </ul>
       </div>
@@ -84,11 +84,11 @@
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
             <a href="Requests" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                 aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+                                                                 aria-hidden="true"></span> Requests <span class="badge"><?php echo $args['numberOfRequests']; ?></span></a>
             <a href="Tasks" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                              aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+                                                              aria-hidden="true"></span> Tasks <span class="badge"><?php echo $args['numberOfCompletedTasks']; ?></span></a>
             <a href="#" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                  aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+                                                                  aria-hidden="true"></span> Employees <span class="badge"><?php echo $args['numberOfEmployees']; ?></span></a>
           </div>
 
           <div class="well">
@@ -129,34 +129,17 @@
                   <th>Salary</th>
                   <th>Bonuses</th>
                 </tr>
-                <tr>
-                  <td>Jill Smith</td>
-                  <td>DevOps</td>
-                  <td>Dec 12, 2016</td>
-                  <td>100000</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Eve Jackson</td>
-                  <td>Python</td>
-                  <td>Dec 13, 2016</td>
-                  <td>120000</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Stephanie Landon</td>
-                  <td>Javscript</td>
-                  <td>Dec 14, 2016</td>
-                  <td>70000</td>
-                  <td>120</td>
-                </tr>
-                <tr>
-                  <td>Mike Johnson</td>
-                  <td>Designer</td>
-                  <td>Dec 15, 2016</td>
-                  <td>90000</td>
-                  <td></td>
-                </tr>
+                  <?php
+                  foreach ($args['employeeStats'] as $row) {
+                      echo "<tr>";
+                      echo "<td>".$row['name']."</td>";
+                      echo "<td>".$row['job_title']."</td>";
+                      echo "<td>".$row['start_date']."</td>";
+                      echo "<td>".$row['salary']."</td>";
+                      echo "<td>".$row['bonuses']."</td>";
+                      echo "</tr>";
+                  }
+                  ?>
               </table>
             </div>
           </div>

@@ -20,6 +20,13 @@ class EmployeesModel extends BaseModel{
         return $this->adapter->results();
     }
 
+    public function getByJob($deptName){
+        $sql="SELECT name, job_title,start_date,salary,bonuses FROM $this->tableName NATURAL JOIN jobs NATURAL JOIN  departments WHERE department_name=?";
+        $param=[$deptName];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
     public function employeesCount($deptName){
         $this->getByDepartment($deptName);
         return $this->adapter->count();
@@ -53,7 +60,7 @@ class EmployeesModel extends BaseModel{
     }
     public function getTaskCompletedEmp($username){
         $sql="select task_title, date_created, task_documentation
-       from   tasks  inner join employees where username=?";
+       from   tasks NATURAL JOIN employees WHERE username=?";
         $param=[$username];
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
@@ -68,7 +75,7 @@ class EmployeesModel extends BaseModel{
     }
 
     public function getDepTasks($username){
-        $sql="select distinct task_title, date_created, task_documentation  from tasks inner join employees
+        $sql="select distinct task_title, date_created, task_documentation  from tasks natural join employees
         where tasks.department_id=(select department_id from employees where username=?);";
         $param=[$username];
         $this->adapter->runQuery($sql,$param);

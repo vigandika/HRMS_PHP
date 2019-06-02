@@ -9,6 +9,22 @@ class RequestsController{
             return \ViewHelper::render("login");
         }
 
-        return \ViewHelper::render("requests");
+        $request = new \Models\RequestsModel('requests_made');
+
+        $numberOfEmployees=$_SESSION['numberOfEmployees'];
+        $numberOfCompletedTasks=$_SESSION['numberOfCompletedTasks'];
+        $numberOfRequests=$_SESSION['numberOfRequests'];
+        $user=$_SESSION['user'];
+        $departmentName = $_SESSION['departmentName'];
+
+        $pendingRequests = $request ->getUnApprovedByDepartment($departmentName);
+        $approvedRequests=$request->getApprovedByDepartment($departmentName);
+
+        $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
+            'numberOfRequests'=>$numberOfRequests, 'pendingRequests' => $pendingRequests,'approvedRequests'=>$approvedRequests];
+        
+        return \ViewHelper::render("requests",$args);
+
+
     }
 }

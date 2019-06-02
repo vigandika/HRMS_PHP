@@ -33,9 +33,10 @@
           <li><a href="Employees">Employees</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, Visar</a></li>
+          <li><a href="#">Welcome, <?php echo $args['user']; ?></a></li>
           <li><a href="Default">Logout</a></li>
         </ul>
+
       </div>
     </div>
   </nav>
@@ -82,11 +83,11 @@
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
             <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                 aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+                                                                 aria-hidden="true"></span> Requests <span class="badge"><?php echo $args['numberOfRequests']; ?></span></a>
             <a href="Tasks" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                              aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+                                                              aria-hidden="true"></span> Tasks <span class="badge"><?php echo $args['numberOfCompletedTasks']; ?></span></a>
             <a href="Employees" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                  aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+                                                                  aria-hidden="true"></span> Employees <span class="badge"><?php echo $args['numberOfEmployees']; ?></span></a>
           </div>
 
           <div class="well">
@@ -127,38 +128,20 @@
                   <th>Leave Form</th>
                   <th></th>
                 </tr>
-                <tr>
-                  <td>Vacation</td>
-                  <td>Blet Beqa</td>
-                  <td>Dec 12, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Pregnancy Leave</td>
-                  <td>Fjolla Hajdarhoxha</td>
-                  <td>Dec 13, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Medicdal Leave</td>
-                  <td>Shpend Jahiri</td>
-                  <td>Dec 13, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Medical Leave</td>
-                  <td>Mali Retkoceri</td>
-                  <td>Dec 14, 2016</td>
-                  <td><a class="btn btn-default" href="#">View</a></td>
-                  <td><a class="btn btn-success" href="#">Approve</a> <a class="btn btn-danger" href="#">Decline</a>
-                  </td>
-                </tr>
+                  <?php
+
+                  foreach($args['pendingRequests'] as  $row) {
+                      echo "<tr>";
+                      echo "<td>". $row['request_title'] ."</td>";
+                      echo "<td>". $row['name'] ."</td>";
+                      echo "<td>". $row['request_date'] ."</td>";
+
+                      echo "<td><a class=\"btn btn-default\" href=\"#\">View</a></td>";
+                      echo "<td><a class=\"btn btn-success\" href=\"#\">Approve</a> <a class=\"btn btn-danger\" href=\"#\">Decline</a></td>";
+                      echo "</tr>";
+                  }
+                  ?>
+
               </table>
             </div>
           </div>
@@ -184,38 +167,18 @@
                     <th>Leave Form</th>
                     <th></th>
                   </tr>
-                  <tr>
-                    <td>Vacation</td>
-                    <td>Blet Beqa</td>
-                    <td>Dec 12, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Pregnancy Leave</td>
-                    <td>Fjolla Hajdarhoxha</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medicdal Leave</td>
-                    <td>Shpend Jahiri</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medical Leave</td>
-                    <td>Mali Retkoceri</td>
-                    <td>Dec 14, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
+                    <?php
+                    foreach($args['approvedRequests']as $row){
+                        echo "<tr>";
+                        echo "<td>".$row['request_title']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['request_date']."</td>";
+                        echo "<td>".$row['approval_date']."</td>";
+                        echo "<td><a class=\"btn btn-default\" href=\"#\">View</a></td>";
+                        echo "</tr>";
+                    }
+
+                    ?>
                 </table>
               </div>
             </div>
