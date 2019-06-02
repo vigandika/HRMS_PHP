@@ -8,9 +8,9 @@ class LoginController{
         $manager=new \Models\ManagersModel('managers');
 
         if($employee->isUser($username,$password)){
-            return \ViewHelper::render("overview");
+            return \ViewHelper::render("e_dashboard",$employee->findByUsername($username));
         }else if($manager->isUser($username,$password)){
-            return \ViewHelper::render("e_dashboard");
+            return \ViewHelper::render("overview");
         }else{
             return \ViewHelper::render("login");
         }
