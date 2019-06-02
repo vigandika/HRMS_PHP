@@ -1,5 +1,6 @@
 <?php
-namespace Models;
+include 'autoinclude.php';
+
 class DepartmentsModel extends BaseModel{
 
     public function getDepartmentsNames(){

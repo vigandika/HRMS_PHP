@@ -1,5 +1,6 @@
 <?php
-Namespace Models;
+include "autoinclude.php";
+
 class RequestsModel extends BaseModel{
 
 

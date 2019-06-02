@@ -1,5 +1,6 @@
 <?php
-Namespace Models;
+include 'autoinclude.php';
+
 class TasksModel extends BaseModel{
 
     public function getByDepartment($deptName){
