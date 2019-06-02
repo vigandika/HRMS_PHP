@@ -45,14 +45,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <form id="login" action="overview.php" class="well">
+          <form method="post" id="login" action="Login" class="well">
             <div class="form-group">
               <label>Username</label>
-              <input type="text" class="form-control" placeholder="Enter Username" />
+              <input name="username" type="text" class="form-control" placeholder="Enter Username" />
             </div>
             <div class="form-group">
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password" />
+              <input name="password" type="password" class="form-control" placeholder="Password" />
             </div>
             <button type="submit" class="btn btn-default btn-block">
               Login

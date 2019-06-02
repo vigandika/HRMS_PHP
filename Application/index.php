@@ -20,11 +20,12 @@ if ($pathSplit === '/') {
 
 } else {
     $controllerName = "Controllers\\" . $pathSplit[0] . "Controller";
-
-    if ($pathSplit[1] != "") {
-        $req_method = "$pathSplit[1]";
-    } else {
-        $req_method = "index";
+    if(array_key_exists(1,$pathSplit)){
+        if ($pathSplit[1] != "") {
+            $req_method = "$pathSplit[1]";
+        }
+    }else{
+        $req_method='index';
     }
 
     $controllerObj = new $controllerName();
