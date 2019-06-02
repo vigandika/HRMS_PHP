@@ -16,8 +16,8 @@ class TasksModel extends BaseModel{
         return $this->adapter->results();
     }
 
-    public function numberOfCompletedTasks(){
-        $this->getCompleted();
+    public function numberOfCompletedTasks($deptName){
+        $this->getByDepartment($deptName);
         return $this->adapter->count();
     }
 

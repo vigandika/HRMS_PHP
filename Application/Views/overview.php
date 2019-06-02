@@ -34,7 +34,7 @@
         </ul>
 <!--          employees name-->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Welcome, </a></li>
+          <li><a href="#">Welcome,<?php echo $args["user"]; ?> </a></li>
           <li><a href="Application">Logout</a></li>
         </ul>
       </div>
@@ -82,11 +82,11 @@
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
             </a>
             <a href="requests.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
-                                                                 aria-hidden="true"></span> Requests <span class="badge">12</span></a>
+                                                                 aria-hidden="true"></span> Requests <span class="badge"><?php echo $args['requests'] ?></span></a>
             <a href="tasks.php" class="list-group-item"><span class="glyphicon glyphicon-pencil"
-                                                              aria-hidden="true"></span> Tasks <span class="badge">33</span></a>
+                                                              aria-hidden="true"></span> Tasks <span class="badge"><?php echo $args['tasks'] ?></span></a>
             <a href="employees.php" class="list-group-item"><span class="glyphicon glyphicon-user"
-                                                                  aria-hidden="true"></span> Employees <span class="badge">203</span></a>
+                                                                  aria-hidden="true"></span> Employees <span class="badge"><?php echo $args['numberOfEmployees'] ?></span></a>
           </div>
 
           <div class="well">
@@ -115,19 +115,19 @@
             <div class="panel-body">
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
+                  <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $args['numberOfEmployees'] ?></h2>
                   <h4>Employees</h4>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
+                  <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <?php echo $args['requests'] ?></h2>
                   <h4>Requests</h4>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
+                  <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo $args['tasks'] ?></h2>
                   <h4>Tasks</h4>
                 </div>
               </div>

@@ -8,6 +8,8 @@ class OverviewController{
         $employee=new \Models\EmployeesModel('employees');
         $manager=new \Models\ManagersModel('managers');
         $department=new \Models\DepartmentsModel('departments');
+        $tasks=new \Models\TasksModel('tasks');
+        $request=new \Models\RequestsModel('requests_made');
 
         if($employee->isUser($username,$password)){
             return \ViewHelper::render("e_dashboard");
@@ -17,7 +19,12 @@ class OverviewController{
             $employees=$employee->getByDepartment($departmentName);
             $numberOfEmployees=$employee->employeesCount($departmentName);
             $budget=$department->getBudget($departmentName);
-            $args=['department'=>$department,'employees'=>$employees,"budget"=>$budget,"numberOfEmployees"=>$numberOfEmployees];
+            $numberOfCompletedTasks=$tasks->numberOfCompletedTasks($departmentName);
+            $numberOfRequests=$request->getNumberOfUnApprovedRequestsPerDepartment($departmentName);
+            $managerName=$manager->getName($username);
+
+            $args=['employees'=>$employees,"budget"=>$budget,"numberOfEmployees"=>$numberOfEmployees,
+                'tasks'=>$numberOfCompletedTasks,'requests'=>$numberOfRequests,"user"=>$managerName[0]['name']];
 
             return \ViewHelper::render("overview",$args);
         }else{
