@@ -14,6 +14,10 @@ class TasksController{
         $numberOfCompletedTasks=$_SESSION['numberOfCompletedTasks'];
         $numberOfRequests=$_SESSION['numberOfRequests'];
         $user=$_SESSION['user'];
+        $departmentName=$_SESSION[]
+
+        $task=new \Models\TasksModel('tasks');
+        $uncompletedTasks=$task->getToBeCompleted($)
 
         $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
             'numberOfRequests'=>$numberOfRequests];
