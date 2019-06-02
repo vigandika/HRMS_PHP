@@ -26,5 +26,4 @@ class EmployeesModel extends BaseModel{
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
     }
-
 }

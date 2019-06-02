@@ -223,8 +223,8 @@
   </script>
 
 
-  <script src="../../Public/Libraries/jquery-3.3.1.min.js"></script>
-  <script src="../../Public/js/bootstrap.min.js"></script>
+  <script src="../Public/Libraries/jquery-3.3.1.min.js"></script>
+  <script src="../Public/js/bootstrap.min.js"></script>
 </body>
 
 </html>
