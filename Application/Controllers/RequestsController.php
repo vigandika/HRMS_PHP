@@ -18,10 +18,10 @@ class RequestsController{
         $departmentName = $_SESSION['departmentName'];
 
         $pendingRequests = $request ->getUnApprovedByDepartment($departmentName);
-
+        $approvedRequests=$request->getApprovedByDepartment($departmentName);
 
         $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
-            'numberOfRequests'=>$numberOfRequests, 'pendingRequests' => $pendingRequests];
+            'numberOfRequests'=>$numberOfRequests, 'pendingRequests' => $pendingRequests,'approvedRequests'=>$approvedRequests];
         
         return \ViewHelper::render("requests",$args);
 
