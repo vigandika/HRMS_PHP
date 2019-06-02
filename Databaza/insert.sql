@@ -163,3 +163,78 @@ UPDATE `managmentsystem`.`employees` SET `name` = 'Eranda', `surname` = 'Morina'
 UPDATE `managmentsystem`.`employees` SET `name` = 'Enxhi', `surname` = 'Bicurri', `job_id` = '2', `department_id` = '7' WHERE (`emp_id` = '68');
 UPDATE `managmentsystem`.`employees` SET `name` = 'Eliot', `surname` = 'Retkoceri', `job_id` = '4', `department_id` = '7' WHERE (`emp_id` = '69');
 UPDATE `managmentsystem`.`employees` SET `name` = 'Mali', `department_id` = '7' WHERE (`emp_id` = '70');
+
+
+
+
+
+
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '1');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '432' WHERE (`emp_id` = '2');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '543' WHERE (`emp_id` = '3');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '6542' WHERE (`emp_id` = '4');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '34' WHERE (`emp_id` = '5');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '432' WHERE (`emp_id` = '6');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '432' WHERE (`emp_id` = '7');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '432' WHERE (`emp_id` = '8');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '9');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '4121' WHERE (`emp_id` = '10');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '421' WHERE (`emp_id` = '11');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '412' WHERE (`emp_id` = '12');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '423' WHERE (`emp_id` = '13');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '543' WHERE (`emp_id` = '14');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '654' WHERE (`emp_id` = '15');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '765' WHERE (`emp_id` = '16');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '423' WHERE (`emp_id` = '17');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '124' WHERE (`emp_id` = '18');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '535' WHERE (`emp_id` = '19');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '6454' WHERE (`emp_id` = '20');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '435' WHERE (`emp_id` = '21');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '634' WHERE (`emp_id` = '22');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '685' WHERE (`emp_id` = '23');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '567' WHERE (`emp_id` = '24');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '132' WHERE (`emp_id` = '25');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '423' WHERE (`emp_id` = '26');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '645' WHERE (`emp_id` = '27');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '756' WHERE (`emp_id` = '28');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '876' WHERE (`emp_id` = '29');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '978' WHERE (`emp_id` = '30');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '213' WHERE (`emp_id` = '31');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '432' WHERE (`emp_id` = '32');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '33');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '423' WHERE (`emp_id` = '34');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '522' WHERE (`emp_id` = '35');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '522' WHERE (`emp_id` = '36');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '37');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '412' WHERE (`emp_id` = '38');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '523' WHERE (`emp_id` = '39');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '523' WHERE (`emp_id` = '40');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '643' WHERE (`emp_id` = '41');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '534' WHERE (`emp_id` = '42');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '43');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '411' WHERE (`emp_id` = '44');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '423' WHERE (`emp_id` = '45');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '654' WHERE (`emp_id` = '46');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '785' WHERE (`emp_id` = '47');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '765' WHERE (`emp_id` = '48');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '876' WHERE (`emp_id` = '49');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '324' WHERE (`emp_id` = '50');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '75' WHERE (`emp_id` = '51');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '345' WHERE (`emp_id` = '52');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '654' WHERE (`emp_id` = '53');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '756' WHERE (`emp_id` = '54');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '865' WHERE (`emp_id` = '55');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '234' WHERE (`emp_id` = '56');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '754' WHERE (`emp_id` = '57');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '645' WHERE (`emp_id` = '58');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '123' WHERE (`emp_id` = '59');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '543' WHERE (`emp_id` = '60');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '654' WHERE (`emp_id` = '61');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '765' WHERE (`emp_id` = '62');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '876' WHERE (`emp_id` = '63');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '342' WHERE (`emp_id` = '64');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '532' WHERE (`emp_id` = '66');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '543' WHERE (`emp_id` = '67');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '543' WHERE (`emp_id` = '68');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '654' WHERE (`emp_id` = '69');
+UPDATE `managmentsystem`.`employees` SET `bonuses` = '645' WHERE (`emp_id` = '70');
