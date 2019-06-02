@@ -33,8 +33,15 @@ class OverviewController{
             $numberOfRequests=$request->getNumberOfUnApprovedRequestsPerDepartment($departmentName);
             $managerName=$manager->getName($username);
 
+
+
             $args=['employees'=>$employees,"budget"=>$budget,"numberOfEmployees"=>$numberOfEmployees,
                 'tasks'=>$numberOfCompletedTasks,'requests'=>$numberOfRequests,"user"=>$managerName[0]['name']];
+
+            $_SESSION['numberOfEmployees']=$numberOfEmployees;
+            $_SESSION['numberOfCompletedTasks']=$numberOfCompletedTasks;
+            $_SESSION['numberOfRequests']=$numberOfRequests;
+            $_SESSION['user']=$args['user'];
 
             return \ViewHelper::render("overview",$args);
         }else{

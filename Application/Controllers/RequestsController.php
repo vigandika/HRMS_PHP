@@ -9,6 +9,13 @@ class RequestsController{
             return \ViewHelper::render("login");
         }
 
-        return \ViewHelper::render("requests");
+        $numberOfEmployees=$_SESSION['numberOfEmployees'];
+        $numberOfCompletedTasks=$_SESSION['numberOfCompletedTasks'];
+        $numberOfRequests=$_SESSION['numberOfRequests'];
+        $user=$_SESSION['user'];
+
+        $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
+            'numberOfRequests'=>$numberOfRequests];
+        return \ViewHelper::render("requests",$args);
     }
 }

@@ -8,6 +8,16 @@ class TasksController{
         }else{
             return \ViewHelper::render("login");
         }
-        return \ViewHelper::render("tasks");
+
+
+        $numberOfEmployees=$_SESSION['numberOfEmployees'];
+        $numberOfCompletedTasks=$_SESSION['numberOfCompletedTasks'];
+        $numberOfRequests=$_SESSION['numberOfRequests'];
+        $user=$_SESSION['user'];
+
+        $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
+            'numberOfRequests'=>$numberOfRequests];
+
+        return \ViewHelper::render("tasks",$args);
     }
 }
