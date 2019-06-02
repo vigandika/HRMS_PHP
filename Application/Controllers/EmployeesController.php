@@ -14,9 +14,14 @@ class EmployeesController{
         $numberOfCompletedTasks=$_SESSION['numberOfCompletedTasks'];
         $numberOfRequests=$_SESSION['numberOfRequests'];
         $user=$_SESSION['user'];
+        $departmentName=$_SESSION['departmentName'];
+
+        $employe=new \Models\EmployeesModel('employees');
+
+        $employeStats=$employe->getByJob($departmentName);
 
         $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
-            'numberOfRequests'=>$numberOfRequests];
+            'numberOfRequests'=>$numberOfRequests,'employeeStats'=>$employeStats];
 
         return \ViewHelper::render("employees",$args);
     }

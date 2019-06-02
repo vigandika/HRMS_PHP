@@ -132,8 +132,8 @@
 
                   foreach($args['pendingRequests'] as  $row) {
                       echo "<tr>";
-                      echo "<td>". $row['name'] ."</td>";
                       echo "<td>". $row['request_title'] ."</td>";
+                      echo "<td>". $row['name'] ."</td>";
                       echo "<td>". $row['request_date'] ."</td>";
 
                       echo "<td><a class=\"btn btn-default\" href=\"#\">View</a></td>";
@@ -167,38 +167,18 @@
                     <th>Leave Form</th>
                     <th></th>
                   </tr>
-                  <tr>
-                    <td>Vacation</td>
-                    <td>Blet Beqa</td>
-                    <td>Dec 12, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Pregnancy Leave</td>
-                    <td>Fjolla Hajdarhoxha</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medicdal Leave</td>
-                    <td>Shpend Jahiri</td>
-                    <td>Dec 13, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Medical Leave</td>
-                    <td>Mali Retkoceri</td>
-                    <td>Dec 14, 2016</td>
-                    <td>Dec 12, 2016</td>
-                    <td><a class="btn btn-default" href="#">View</a></td>
-                    <td></td>
-                  </tr>
+                    <?php
+                    foreach($args['approvedRequests']as $row){
+                        echo "<tr>";
+                        echo "<td>".$row['request_title']."</td>";
+                        echo "<td>".$row['name']."</td>";
+                        echo "<td>".$row['request_date']."</td>";
+                        echo "<td>".$row['approval_date']."</td>";
+                        echo "<td><a class=\"btn btn-default\" href=\"#\">View</a></td>";
+                        echo "</tr>";
+                    }
+
+                    ?>
                 </table>
               </div>
             </div>
