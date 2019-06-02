@@ -1,6 +1,6 @@
 <?php
 namespace Models;
-include_once '../Classes/DB.php';
+include_once 'DB.php';
 class BaseModel{
     protected $adapter;
     protected $tableName;

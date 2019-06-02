@@ -7,8 +7,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>HRMS</title>
-    <link href="../../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/cover.css" rel="stylesheet" />
+    <link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Public/css/cover.css" rel="stylesheet" />
   </head>
 
   <body class="text-center">
@@ -27,12 +27,12 @@
         <p class="lead">Click on the game you want to play</p>
         <p class="lead">
           <a
-            href="../../Games/MeteorShower/starshower.html"
+            href="../../Public/Games/MeteorShower/starshower.html"
             class="btn btn-lg btn-secondary"
             >Star Shower</a
           >
           <a
-            href="../../Games/FloatingBalls/floatingballs.html"
+            href="../../Public/Games/FloatingBalls/floatingballs.html"
             class="btn btn-lg btn-secondary"
             >Floating Balls</a
           >
