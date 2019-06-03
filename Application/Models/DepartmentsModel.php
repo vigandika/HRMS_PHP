@@ -15,5 +15,10 @@ class DepartmentsModel extends BaseModel{
         $this->adapter->runQuery($sql,$param);
         return $this->adapter->results();
     }
-    
+    public function getDepartmentId($deptName){
+        $sql="SELECT department_id FROM departments WHERE department_name=?";
+        $param=[$deptName];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
 }

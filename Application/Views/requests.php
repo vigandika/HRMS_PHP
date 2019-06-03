@@ -55,7 +55,7 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Task</a></li>
+              <li><a  type="button" data-toggle="modal" data-target="#addTask">Add Task</a></li>
               <li><a href="#">See Requests</a></li>
               <li><a href="Employees">Employee</a></li>
             </ul>
@@ -198,7 +198,7 @@
   <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form>
+        <form method="post" action="Addtask">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>

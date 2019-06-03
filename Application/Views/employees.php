@@ -117,7 +117,7 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">
-                  <input class="form-control" type="text" placeholder="Filter Employees...">
+                  <input  class="form-control" type="text" placeholder="Filter Employees...">
                 </div>
               </div>
               <br>
@@ -159,7 +159,7 @@
   <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form>
+        <form action="Addtask" method="post">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>

@@ -193,7 +193,7 @@
   <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form>
+        <form method="post" action="Addtask">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
@@ -202,7 +202,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label>Task Title</label>
-              <input type="text" class="form-control" placeholder="Task Title">
+              <input name="tasktitle" type="text" class="form-control" placeholder="Task Title">
             </div>
             <div class="form-group">
               <label>Task Body</label>

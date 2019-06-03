@@ -55,7 +55,7 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a type="button" data-toggle="modal" data-target="#addTask">Add Tasks</a></li>
+              <li><a  type="button" data-toggle="modal" data-target="#addTask">Add Tasks</a></li>
               <li><a href="Requests">See Requests</a></li>
               <li><a href="Employees">Employee</a></li>
             </ul>
@@ -180,7 +180,7 @@
   <div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form>
+        <form action="Addtask" method="post">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
@@ -189,7 +189,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label>Task Title</label>
-              <input type="text" class="form-control" placeholder="Task Title">
+              <input type="text" name="title" class="form-control" placeholder="Task Title">
             </div>
             <div class="form-group">
               <label>Task Body</label>
@@ -202,11 +202,11 @@
             </div>
             <div class="form-group">
               <label>Due Date</label>
-              <input type="text" class="form-control" placeholder="Add a time penalty...">
+              <input type="date" name="duedate" class="form-control" placeholder="Add a time penalty...">
             </div>
             <div class="form-group">
-              <label>Task Budget</label>
-              <input type="text" class="form-control" placeholder="Add task budget...">
+              <label>Bonuses</label>
+              <input type="text" name="bonuses" class="form-control" placeholder="Add task bonus...">
             </div>
           </div>
           <div class="modal-footer">

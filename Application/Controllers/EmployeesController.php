@@ -20,6 +20,8 @@ class EmployeesController{
 
         $employeStats=$employe->getByJob($departmentName);
 
+
+
         $args=['user'=>$user,'numberOfEmployees'=>$numberOfEmployees,'numberOfCompletedTasks'=>$numberOfCompletedTasks,
             'numberOfRequests'=>$numberOfRequests,'employeeStats'=>$employeStats];
 
