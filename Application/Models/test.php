@@ -1,6 +1,7 @@
 <?php
 
-include_once 'ManagersModel.php';
+include_once 'EmployeesModel.php';
 
-$var =new \Models\ManagersModel('managers');
-print_r($var->getName("vigandika"));
+$var =new \Models\EmployeesModel('employees');
+
+print_r($var->getSuggestions("a",'Head Office'));

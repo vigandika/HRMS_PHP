@@ -26,5 +26,6 @@ class EmployeesController{
             'numberOfRequests'=>$numberOfRequests,'employeeStats'=>$employeStats];
 
         return \ViewHelper::render("employees",$args);
+
     }
 }

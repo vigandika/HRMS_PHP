@@ -13,6 +13,17 @@ class EmployeesModel extends BaseModel{
             return false;
         }
     }
+
+    public function getSuggestions($pattern,$department){
+        $sql="SELECT name , job_title, start_date,salary,bonuses
+              FROM employees NATURAL JOIN departments NATURAL JOIN jobs 
+              WHERE department_name =? AND (name LIKE ? OR job_title LIKE ? OR start_date LIKE ? OR salary LIKE ? OR bonuses LIKE ?)";
+        $pattern=$pattern."%";
+        $param=[$department,$pattern,$pattern,$pattern,$pattern,$pattern];
+        $this->adapter->runQuery($sql,$param);
+        return $this->adapter->results();
+    }
+
     public function getByDepartment($deptName){
         $sql="SELECT name,surname, start_date FROM $this->tableName NATURAL JOIN departments WHERE department_name=?";
         $param=[$deptName];
