@@ -48,7 +48,7 @@
           <form method="post" id="login" action="Overview" class="well">
             <div class="form-group">
               <label>Username</label>
-              <input required name="username" type="text" value="<?php echo @$_COOKIE['cid']?>" class="form-control" placeholder="Enter Username" />
+              <input required name="username" type="text" value="<?php if(isset($_COOKIE['username']))echo $_COOKIE['username'] ?>" class="form-control" placeholder="Enter Username" />
             </div>
             <div class="form-group">
               <label>Password</label>

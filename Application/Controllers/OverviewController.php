@@ -12,6 +12,7 @@ class OverviewController{
             $password = $_POST['password'];
             $_SESSION['username']=$username;
             $_SESSION['password']=$password;
+            setcookie('username',$username,time()+3600);
         }
 
         $employee=new \Models\EmployeesModel('employees');
